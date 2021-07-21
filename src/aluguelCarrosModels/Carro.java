@@ -1,5 +1,8 @@
 package aluguelCarrosModels;
 
+//import java.util.ArrayList;
+import java.util.HashMap;
+
 public class Carro {
 	protected int id;
 	protected String modelo;
@@ -8,6 +11,7 @@ public class Carro {
 	protected int dono;
 	protected int status;
 	protected float preco;
+	protected HashMap<Integer, String> comentarios;	
 	
 	public int getId() {
 		return id;

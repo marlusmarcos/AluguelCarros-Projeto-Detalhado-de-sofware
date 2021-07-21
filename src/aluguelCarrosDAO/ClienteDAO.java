@@ -30,8 +30,16 @@ public class ClienteDAO implements IClienteDAO{
 
 	@Override
 	public int alterar(int id, Cliente cliente) {
-		// TODO Auto-generated method stub
-		return 0;
+		for (Cliente cl : this.clientes) {
+			if (cl.getId() == id) {
+				cl.setId(id);
+				cl.setNome(cliente.getNome());
+				cl.setCpf(cliente.getCpf());
+				cl.setEmail(cliente.getEmail());
+				break;
+			}
+		}
+		return id;
 	}
 
 	@Override
