@@ -6,8 +6,8 @@ import aluguelCarrosModels.Cliente;
 
 public interface IClienteDAO {
 
-	boolean inserir (Cliente cliente);
-	boolean remover (int id);
+	void inserir (Cliente cliente);
+	int remover (int id);
 	int alterar (int id, Cliente cliente);
 	Cliente buscar (int id);
 	ArrayList<Cliente> buscarClientes();

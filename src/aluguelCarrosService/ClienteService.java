@@ -2,27 +2,34 @@ package aluguelCarrosService;
 import java.util.ArrayList;
 
 import ServoceExceptioin.ServicoException;
+import aluguelCarrosDAO.ClienteDAO;
 import aluguelCarrosDAO.IClienteDAO;
 import aluguelCarrosModels.Cliente;
 
 public class ClienteService {
-	protected IClienteDAO clienteDAO;
+	protected IClienteDAO clienteDAO = new ClienteDAO();
 	
-
-	public ClienteService(IClienteDAO clienteDAO) {
+	
+/*	public ClienteService () {}
+	public ClienteService(ClienteDAO clienteDAO) {
 		super();
 		this.clienteDAO = clienteDAO;
 	}
-	
-
-	public boolean inserir (Cliente cliente) throws ServicoException {
-		verificarCliente(cliente);
-		if (this.clienteDAO.buscar(cliente.getId()) != null ) {
-			throw new ServicoException("Cliente já existe");
-		}
-		return this.clienteDAO.inserir(cliente);
+	public static IClienteService getInstance() {
+		if (instance == null) {
+			instance = new ClienteService();
+		}  
+		return instance;
 	}
-	public boolean remover (int idcliente) throws ServicoException {
+	*/
+	public int insert (Cliente cliente) throws ServicoException {
+		
+		verificarCliente(cliente);
+		//System.out.println (cliente.getCpf()+cliente.getId());
+		clienteDAO.inserir(cliente);
+		return 1;
+	}
+	public int remover (int idcliente) throws ServicoException {
 		if (this.clienteDAO.buscar(idcliente) == null ) {
 			throw new ServicoException("Cliente não existe");
 		}
@@ -36,7 +43,7 @@ public class ClienteService {
 		}
 		return this.clienteDAO.alterar(id, cliente);
 	}
-	public Cliente buscar (int id) {
+	public Cliente buscarID (int id) {
 		return this.clienteDAO.buscar(id);
 	}
 	
@@ -50,7 +57,7 @@ public class ClienteService {
 		if (c == null) {
 			erros += "Cliente nulo\n";
 		}
-		if (c.getNome() == null) {
+		if (c.getNome().length() < 1) {
 			erros+="nome vazio\n";
 		}
 		if (c.getCpf().length() != 11) {

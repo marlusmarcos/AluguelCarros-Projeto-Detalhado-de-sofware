@@ -1,22 +1,28 @@
 package aluguelCarrosDAO;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import aluguelCarrosModels.Cliente;
 
 public class ClienteDAO implements IClienteDAO{
-	protected ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-	protected int setarId;// criar automaticamente id para controle
+	protected ArrayList<Cliente> clientes;
+	protected int setarId =0;// criar automaticamente id para controle
+	
+	public ClienteDAO() {
+		this.clientes = new ArrayList<Cliente>();
+		//this.setarId = 1;
+	}	
 	
 	@Override
-	public boolean inserir(Cliente cliente) {
+	public void inserir(Cliente cliente) {
 		cliente.setId(sequenciarId());
-		clientes.add(cliente);		
-		return true;
+		this.clientes.add(cliente);
+		//return cliente.getId();
 	}
 
 	@Override
-	public boolean remover(int id) {
+	public int remover(int id) {
 		Cliente out = new Cliente();
 		for (Cliente c : clientes) {
 			if (id == c.getId()) {
@@ -25,7 +31,7 @@ public class ClienteDAO implements IClienteDAO{
 			}
 		}
 		this.clientes.remove(out);
-		return true;
+		return 1;
 	}
 
 	@Override
@@ -56,13 +62,16 @@ public class ClienteDAO implements IClienteDAO{
 	public ArrayList<Cliente> buscarClientes() {
 		return this.clientes;
 	}
-
-	@Override
+	public int setID () {
+		this.setarId +=1;
+		return this.setarId;
+	}
 	public int sequenciarId() {
 		// id atual será igual ao próximo id em sequencia
-		int myId = this.setarId;
-		this.setarId+=1;
-		return myId;
+		int id = setID();
+		return id;
 	}
+
+	
 
 }

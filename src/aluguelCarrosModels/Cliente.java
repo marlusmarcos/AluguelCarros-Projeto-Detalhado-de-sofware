@@ -5,10 +5,17 @@ public class Cliente {
 	protected String cpf;
 	protected String nome;
 	protected String email;
-	//protected int tipo;
+	protected int tipo;
 	
+	
+	public int getTipo() {
+		return tipo;
+	}
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
 	public int getId() {
-		return id;
+		return this.id;
 	}
 	public void setId(int id) {
 		this.id = id;
