@@ -41,6 +41,14 @@ public class Main {
 		c = clienteDAO.buscarID(3);
 		System.out.println("nome: " + c.getNome());
 		System.out.println("id: " + c.getId());
+		Cliente clienteMarlus = new Cliente ();
+		clienteMarlus.setCpf("12345678910");
+		clienteMarlus.setEmail("Marlus@gmail.com");
+		clienteMarlus.setNome("Marlus");
+		clienteDAO.alterar(1, clienteMarlus);
+		System.out.println("nome: " + clienteDAO.buscarID(1).getNome());
+		
+		
 		
 		CarroService carroService = new CarroService();
 		Carro carro = new Carro("uno", "kjh4561", "branco", 1,1,(float) 80.0);
