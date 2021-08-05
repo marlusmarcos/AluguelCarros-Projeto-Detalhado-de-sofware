@@ -55,7 +55,7 @@ public class CarroDAO implements ICarroDAO{
 	}
 
 	@Override
-	public ArrayList<Carro> buscarClientes() {
+	public ArrayList<Carro> buscarCarros() {
 			return carros;
 	}
 

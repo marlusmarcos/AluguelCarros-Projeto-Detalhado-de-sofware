@@ -1,5 +1,7 @@
 package aluguelCarrosService;
 
+import java.util.ArrayList;
+
 import ServoceExceptioin.ServicoException;
 import aluguelCarrosDAO.CarroDAO;
 import aluguelCarrosDAO.ClienteDAO;
@@ -25,6 +27,9 @@ public class CarroService {
 	}
 	public Carro buscarCarro (int id) {
 		return carroDAO.buscar(id);
+	}
+	public ArrayList<Carro> buscarCarros () {
+		return this.carroDAO.buscarCarros();
 	}
 	
 	public int verificarCarro (Carro c) throws ServicoException {

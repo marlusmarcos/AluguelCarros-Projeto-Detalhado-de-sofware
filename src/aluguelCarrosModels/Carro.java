@@ -71,4 +71,10 @@ public class Carro {
 	public void setDono(int dono) {
 		this.dono = dono;
 	}
+	public void setStatus (int status) {
+		this.status = status;
+	}
+	public int getStatus() {
+		return this.status;
+	}
 }

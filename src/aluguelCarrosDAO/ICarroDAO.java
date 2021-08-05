@@ -9,7 +9,7 @@ public interface ICarroDAO {
 	int remover (int id);
 	int alterar (int id, Carro carro);
 	Carro buscar (int id);
-	ArrayList<Carro> buscarClientes();
+	ArrayList<Carro> buscarCarros();
 	public int sequenciarId ();
 
 }

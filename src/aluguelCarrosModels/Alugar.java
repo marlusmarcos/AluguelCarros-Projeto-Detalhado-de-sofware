@@ -4,9 +4,15 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Alugar {
+	protected int id;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	protected Carro carro;
 	protected Cliente cliente;
-	protected ArrayList<Alugar> carrosAlugados;
 	protected Date dataInicio;
 	protected Date dataFim;
 	protected int qtdDias;
