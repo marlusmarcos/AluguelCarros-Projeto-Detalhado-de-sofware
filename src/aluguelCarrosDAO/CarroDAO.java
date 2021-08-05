@@ -37,7 +37,7 @@ public class CarroDAO implements ICarroDAO{
 	public int alterar(int id, Carro carro) {
 		for (Carro c : carros) {
 			if (c.getId() == id) {
-				carros.get(id).setModelo(carro.getModelo());
+				c.setModelo(carro.getModelo());
 				break;
 			}
 		}

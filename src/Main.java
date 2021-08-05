@@ -57,7 +57,8 @@ public class Main {
 		System.out.println("id:" + out.getId() +"\nModelo: " + out.getModelo());
 		out.setModelo("CERATO");
 		carroService.alterar(1, out);
-		Carro out2 = carroService.buscarCarro(1);
+		Carro out2 = new Carro();
+		out2 = carroService.buscarCarro(1);
 		System.out.println("id:" + out2.getId() +"\nModelo: " + out2.getModelo());
 		
 	}
