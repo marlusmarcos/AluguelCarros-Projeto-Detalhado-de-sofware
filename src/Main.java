@@ -14,6 +14,9 @@ public class Main {
 		vw.cadastrarCarro();
 		vw.alterarCliente();
 		vw.carrosDisponiveis();
+		vw.alugarCarro(1,1);
+		vw.carrosDisponiveis();
+
 		
 	}
 	

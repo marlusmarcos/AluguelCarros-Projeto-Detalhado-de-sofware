@@ -3,6 +3,7 @@ package view;
 import ServoceExceptioin.ServicoException;
 import aluguelCarrosModels.Carro;
 import aluguelCarrosModels.Cliente;
+import aluguelCarrosService.AlugarService;
 import aluguelCarrosService.CarroService;
 import aluguelCarrosService.ClienteService;
 
@@ -10,12 +11,14 @@ public class ViewCasos {
 	//IClien	teDAO clienteDAO = new ClienteDAO();
 				ClienteService clienteDAO = new ClienteService();
 				CarroService carroService = new CarroService();
+				AlugarService alugar = new AlugarService (carroService, clienteDAO);
 				Cliente cliente = new Cliente ();
 			
 			public void cadastrarClientes() throws ServicoException {
 				cliente.setCpf("01825293466");
 				cliente.setEmail("marlus@gmail.com");
 				cliente.setNome("asasas");
+				cliente.setTipo(1);
 				Cliente cliente2 = new Cliente ();
 				cliente2.setCpf("01888093466");
 				cliente2.setEmail("marsadadadalus@gmail.com");
@@ -50,7 +53,7 @@ public class ViewCasos {
 			public void cadastrarCarro () throws ServicoException {
 				Carro carro = new Carro("uno", "kjh4561", "branco", 1,1,(float) 80.0);
 				carroService.inserirCarro(carro);
-				Carro carro2 = new Carro("GOL", "mxs4597", "preto", 1,0,(float) 80.0);
+				Carro carro2 = new Carro("GOL", "mxs4597", "preto", 1,1,(float) 80.0);
 				carroService.inserirCarro(carro2);
 				Carro out = carroService.buscarCarro(1);
 				System.out.println("id:" + out.getId() +"\nModelo: " + out.getModelo());
@@ -73,4 +76,11 @@ public class ViewCasos {
 				}
 
 			}
+			public void alugarCarro(int idcarro, int idcliente) throws ServicoException {
+				alugar.alugarCarro(idcarro, idcliente);
+				
+			}
+			
+			
+			
 }

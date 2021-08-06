@@ -11,8 +11,8 @@ public class Alugar {
 	public void setId(int id) {
 		this.id = id;
 	}
-	protected Carro carro;
-	protected Cliente cliente;
+	protected int idcarro;
+	protected int idcliente;
 	protected Date dataInicio;
 	protected Date dataFim;
 	protected int qtdDias;
@@ -42,17 +42,17 @@ public class Alugar {
 	public void setPreco(float preco) {
 		this.preco = preco;
 	}
-	public Carro getCarro() {
-		return carro;
+	public int getCarro() {
+		return idcarro;
 	}
-	public void setCarro(Carro carro) {
-		this.carro = carro;
+	public void setCarro(int carro) {
+		this.idcarro = carro;
 	}
-	public Cliente getCliente() {
-		return cliente;
+	public int getCliente() {
+		return idcliente;
 	}
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setCliente(int cliente) {
+		this.idcliente = cliente;
 	}
 
 }

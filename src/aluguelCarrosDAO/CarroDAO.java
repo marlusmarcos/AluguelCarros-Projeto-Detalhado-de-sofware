@@ -35,11 +35,13 @@ public class CarroDAO implements ICarroDAO{
 
 	@Override
 	public int alterar(int id, Carro carro) {
+		int index = 0;
 		for (Carro c : carros) {
 			if (c.getId() == id) {
-				c.setModelo(carro.getModelo());
+				carros.set(index, carro);
 				break;
 			}
+			index+=1;
 		}
 		return 0;
 	}
