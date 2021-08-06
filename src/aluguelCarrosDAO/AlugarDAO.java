@@ -7,6 +7,7 @@ import aluguelCarrosModels.Carro;
 
 public class AlugarDAO implements IAlugarDAO{
 	protected ArrayList<Alugar> alugados;
+	Alugar alugar = new Alugar();
 	protected int setarId =0;// criar automaticamente id para controle
 	public AlugarDAO() {
 		this.alugados = new ArrayList<Alugar>();
@@ -15,8 +16,11 @@ public class AlugarDAO implements IAlugarDAO{
 
 
 	@Override
-	public void inserir(Alugar alugar) {
+	public void inserir(int idcarro, int idcliente) {
+		Alugar alugar = new Alugar();
 		alugar.setId(sequenciarId());
+		alugar.setCliente(idcliente);
+		alugar.setCarro(idcarro);
 		this.alugados.add(alugar);		
 	}
 
@@ -66,5 +70,6 @@ public class AlugarDAO implements IAlugarDAO{
 		int id = setID();
 		return id;
 	}
+
 
 }

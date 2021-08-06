@@ -1,5 +1,7 @@
 package aluguelCarrosService;
 
+import java.util.ArrayList;
+
 import ServoceExceptioin.ServicoException;
 import aluguelCarrosDAO.AlugarDAO;
 import aluguelCarrosDAO.CarroDAO;
@@ -28,13 +30,13 @@ public class AlugarService {
 			car.setStatus(0);
 			carroServ.alterar(idcarro, car);
 		}
-		System.out.println("Cliente ou Carro não existem/ ou é um locataio");
+		inserirAlugados(idcarro, idcliente);
 		
 	}
 	
-	public void inserirAlugados (Alugar alugar)  {
+	public void inserirAlugados (int idcarro, int idcliente)  {
 		
-		alugarDAO.inserir(alugar);
+		alugarDAO.inserir(idcarro, idcliente);
 	}
 	public void remover (int id) {
 		
@@ -43,6 +45,8 @@ public class AlugarService {
 	public Alugar buscarAlugados (int id) {
 		return alugarDAO.buscar(id);
 	}
-	
+	public ArrayList<Alugar> todosAlugados () {
+		return this.alugarDAO.buscarAlugados();
+	}
 
 }

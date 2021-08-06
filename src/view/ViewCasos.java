@@ -1,6 +1,7 @@
 package view;
 
 import ServoceExceptioin.ServicoException;
+import aluguelCarrosModels.Alugar;
 import aluguelCarrosModels.Carro;
 import aluguelCarrosModels.Cliente;
 import aluguelCarrosService.AlugarService;
@@ -80,7 +81,14 @@ public class ViewCasos {
 				alugar.alugarCarro(idcarro, idcliente);
 				
 			}
-			
+			public void carrosAlugados () {
+				int i = 0;
+				Carro carro = new Carro();
+				for (Alugar car : alugar.todosAlugados()) {
+					carro = carroService.buscarCarro(car.getCarro());
+					System.out.println("Carro: " + carro.getModelo() );
+				}
+			}
 			
 			
 }
