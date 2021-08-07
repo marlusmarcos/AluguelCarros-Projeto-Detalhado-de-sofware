@@ -35,8 +35,9 @@ public class AlugarService {
 	}
 	
 	public void inserirAlugados (int idcarro, int idcliente)  {
-		
-		alugarDAO.inserir(idcarro, idcliente);
+		Carro carro = carroServ.buscarCarro(idcarro);
+		Cliente cliente = clienteService.buscarID(idcliente);
+		alugarDAO.inserir(carro, cliente);
 	}
 	public void remover (int id) {
 		

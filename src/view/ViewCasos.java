@@ -85,8 +85,7 @@ public class ViewCasos {
 				int i = 0;
 				Carro carro = new Carro();
 				for (Alugar car : alugar.todosAlugados()) {
-					carro = carroService.buscarCarro(car.getCarro());
-					System.out.println("Carro: " + carro.getModelo() );
+					System.out.println("Carro: " + car.getCarro().getModelo());
 				}
 			}
 			

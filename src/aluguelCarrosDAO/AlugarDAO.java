@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import aluguelCarrosModels.Alugar;
 import aluguelCarrosModels.Carro;
+import aluguelCarrosModels.Cliente;
 
 public class AlugarDAO implements IAlugarDAO{
 	protected ArrayList<Alugar> alugados;
@@ -16,7 +17,7 @@ public class AlugarDAO implements IAlugarDAO{
 
 
 	@Override
-	public void inserir(int idcarro, int idcliente) {
+	public void inserir(Carro idcarro, Cliente idcliente) {
 		Alugar alugar = new Alugar();
 		alugar.setId(sequenciarId());
 		alugar.setCliente(idcliente);
@@ -69,6 +70,13 @@ public class AlugarDAO implements IAlugarDAO{
 		// id atual será igual ao próximo id em sequencia
 		int id = setID();
 		return id;
+	}
+
+
+	@Override
+	public void calcularPreco(int dias, float preco) {
+	
+		
 	}
 
 

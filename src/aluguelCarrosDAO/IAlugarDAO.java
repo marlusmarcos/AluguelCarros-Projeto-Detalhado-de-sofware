@@ -3,6 +3,8 @@ package aluguelCarrosDAO;
 import java.util.ArrayList;
 
 import aluguelCarrosModels.Alugar;
+import aluguelCarrosModels.Carro;
+import aluguelCarrosModels.Cliente;
 
 
 public interface IAlugarDAO {
@@ -11,6 +13,7 @@ public interface IAlugarDAO {
 	Alugar buscar (int id);
 	ArrayList<Alugar> buscarAlugados();
 	public int sequenciarId ();
-	void inserir(int idcliente, int idcarro);
+	void inserir(Carro idcarro, Cliente idcliente);
+	void calcularPreco(int dias, float preco);
 	
 }
