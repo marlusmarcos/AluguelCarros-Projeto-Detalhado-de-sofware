@@ -18,7 +18,7 @@ public class ViewCasos {
 			public void cadastrarClientes() throws ServicoException {
 				cliente.setCpf("01825293466");
 				cliente.setEmail("marlus@gmail.com");
-				cliente.setNome("asasas");
+				cliente.setNome("Marlus Marcos");
 				cliente.setTipo(1);
 				Cliente cliente2 = new Cliente ();
 				cliente2.setCpf("01888093466");
@@ -83,9 +83,19 @@ public class ViewCasos {
 			}
 			public void carrosAlugados () {
 				int i = 0;
-				Carro carro = new Carro();
+				//Carro carro = new Carro();
 				for (Alugar car : alugar.todosAlugados()) {
 					System.out.println("Carro: " + car.getCarro().getModelo());
+				}
+			}
+			public void carrosClienteAlugados () {
+				//Carro c = new Carro();
+				//Cliente cl = new Cliente ();
+				System.out.println("-----------------------------");
+				System.out.println("Carros alugados do cliente:");
+				for (Alugar car : alugar.todosAlugados()) {
+					System.out.println("Carro: " + car.getCarro().getModelo() + " | Cliente: "+ car.getCliente().getNome());
+					System.out.println("-----------------------------");
 				}
 			}
 			

@@ -3,7 +3,14 @@ package aluguelCarrosModels;
 public class Comentario {
 	protected String mensagem;
 	protected int idCliente;
+	protected int idCarro;
 	
+	public int getIdCarro() {
+		return idCarro;
+	}
+	public void setIdCarro(int idCarro) {
+		this.idCarro = idCarro;
+	}
 	public String getMensagem() {
 		return mensagem;
 	}

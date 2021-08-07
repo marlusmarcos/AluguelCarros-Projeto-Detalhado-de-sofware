@@ -18,6 +18,7 @@ public class Main {
 		vw.carrosDisponiveis();
 		System.out.println("CARROS ALUGADOS =================");
 		vw.carrosAlugados();
+		vw.carrosClienteAlugados();
 
 		
 	}
