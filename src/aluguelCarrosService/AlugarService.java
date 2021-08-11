@@ -22,7 +22,7 @@ public class AlugarService {
 		this.clienteService = clienteService;
 	}
 
-	public void alugarCarro (int idcarro, int idcliente) throws ServicoException {
+	public void alugarCarro (int idcarro, int idcliente, int qtdDias) throws ServicoException {
 		Carro car = carroServ.buscarCarro(idcarro);
 		Cliente cliente = clienteService.buscarID(idcliente);
 		if (car != null && car.getStatus() == 1 && cliente != null && cliente.getTipo() == 1) {
@@ -30,17 +30,22 @@ public class AlugarService {
 			car.setStatus(0);
 			carroServ.alterar(idcarro, car);
 		}
-		inserirAlugados(idcarro, idcliente);
+		float valor = calcularpreco(car.getPreco(), qtdDias);
+		inserirAlugados(idcarro, idcliente, valor);
 		
 	}
 	
-	public void inserirAlugados (int idcarro, int idcliente)  {
+	public void inserirAlugados (int idcarro, int idcliente, float valor)  {
 		Carro carro = carroServ.buscarCarro(idcarro);
 		Cliente cliente = clienteService.buscarID(idcliente);
-		alugarDAO.inserir(carro, cliente);
+		alugarDAO.inserir(carro, cliente, valor);
 	}
 	public void remover (int id) {
 		
+	}
+	
+	public float calcularpreco(float id, int qtdDias) {
+		return qtdDias*id; 
 	}
 	
 	public Alugar buscarAlugados (int id) {

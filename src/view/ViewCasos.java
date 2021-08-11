@@ -77,8 +77,8 @@ public class ViewCasos {
 				}
 
 			}
-			public void alugarCarro(int idcarro, int idcliente) throws ServicoException {
-				alugar.alugarCarro(idcarro, idcliente);
+			public void alugarCarro(int idcarro, int idcliente, int dias) throws ServicoException {
+				alugar.alugarCarro(idcarro, idcliente, dias);
 				
 			}
 			public void carrosAlugados () {
@@ -97,6 +97,14 @@ public class ViewCasos {
 					System.out.println("Carro: " + car.getCarro().getModelo() + " | Cliente: "+ car.getCliente().getNome());
 					System.out.println("-----------------------------");
 				}
+			}
+			public void informar () {
+				System.out.println("Informação dos clientes");
+				for (Alugar car : alugar.todosAlugados()) {
+					System.out.println("Carro: " + car.getCarro().getModelo() + " | Cliente: "+ car.getCliente().getNome()+ " | preco: "+ car.getPreco());
+					System.out.println("-----------------------------");
+				}
+				
 			}
 			
 			

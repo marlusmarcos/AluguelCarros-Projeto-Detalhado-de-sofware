@@ -16,6 +16,9 @@ public class Carro {
 		super();
 	}
 	
+	public void setComentario (int id, String comentario) {
+		comentarios.put(id, comentario);
+	}
 
 	public Carro(String modelo, String placa, String cor, int dono, int status, float d) {
 		super();
@@ -76,5 +79,11 @@ public class Carro {
 	}
 	public int getStatus() {
 		return this.status;
+	}
+	public float getPreco() {
+		return this.preco;
+	}
+	public void setPreco (float preco) {
+		this.preco = preco;
 	}
 }

@@ -13,7 +13,7 @@ public interface IAlugarDAO {
 	Alugar buscar (int id);
 	ArrayList<Alugar> buscarAlugados();
 	public int sequenciarId ();
-	void inserir(Carro idcarro, Cliente idcliente);
+	void inserir(Carro idcarro, Cliente idcliente, float preco);
 	void calcularPreco(int dias, float preco);
 	
 }

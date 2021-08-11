@@ -1,6 +1,8 @@
 package aluguelCarrosDAO;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import aluguelCarrosModels.Alugar;
 import aluguelCarrosModels.Carro;
@@ -17,11 +19,12 @@ public class AlugarDAO implements IAlugarDAO{
 
 
 	@Override
-	public void inserir(Carro idcarro, Cliente idcliente) {
+	public void inserir(Carro idcarro, Cliente idcliente, float preco) {
 		Alugar alugar = new Alugar();
 		alugar.setId(sequenciarId());
 		alugar.setCliente(idcliente);
 		alugar.setCarro(idcarro);
+		alugar.setPreco(preco);
 		this.alugados.add(alugar);		
 	}
 
