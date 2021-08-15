@@ -3,8 +3,11 @@ package aluguelCarrosDAO;
 import java.util.ArrayList;
 
 import aluguelCarrosModels.Bicicleta;
+import aluguelCarrosModels.Carro;
 
 public class BicicletaDAO implements IBicicletaDAO{
+	protected ArrayList<Bicicleta> bicicletas;
+	protected int setarId =0;
 
 	@Override
 	public void inserir(Bicicleta bicicleta) {

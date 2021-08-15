@@ -6,8 +6,15 @@ public class Cliente {
 	protected String nome;
 	protected String email;
 	protected int tipo;
+	protected char cnh;
 	
 	
+	public char getCnh() {
+		return cnh;
+	}
+	public void setCnh(char cnh) {
+		this.cnh = cnh;
+	}
 	public int getTipo() {
 		return tipo;
 	}

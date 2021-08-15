@@ -11,7 +11,7 @@ import aluguelCarrosModels.Alugar;
 import aluguelCarrosModels.Carro;
 import aluguelCarrosModels.Cliente;
 
-public class AlugarService {
+public class AlugarService implements IAlugarProdService {
 	protected IAlugarDAO alugarDAO = new AlugarDAO();
 	protected CarroService carroServ;
 	protected ClienteService clienteService;
@@ -54,5 +54,13 @@ public class AlugarService {
 	public ArrayList<Alugar> todosAlugados () {
 		return this.alugarDAO.buscarAlugados();
 	}
+
+	@Override
+	public void alugarProduto(int idcarro, int idcliente, int qtdDias) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 
 }
