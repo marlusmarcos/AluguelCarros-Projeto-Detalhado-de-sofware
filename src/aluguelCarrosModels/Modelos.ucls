@@ -3,78 +3,24 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <package id="1" language="java" name="aluguelCarrosModels" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosModels" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="276" width="1502" x="17" y="468"/>    
+    <position height="279" width="1502" x="17" y="496"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <class id="2" language="java" name="aluguelCarrosModels.Onibus" project="aluguelCarros" 
-    file="/aluguelCarros/src/aluguelCarrosModels/Onibus.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="185" width="97" x="25" y="546"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="true" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="false" package="true" protected="false" private="false" static="false"/>    
-    </display>  
-  </class>  
-  <class id="3" language="java" name="aluguelCarrosModels.Moto" project="aluguelCarros" 
-    file="/aluguelCarros/src/aluguelCarrosModels/Moto.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="196" width="97" x="162" y="535"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="true" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="false" package="true" protected="false" private="false" static="false"/>    
-    </display>  
-  </class>  
-  <class id="4" language="java" name="aluguelCarrosModels.Cliente" project="aluguelCarros" 
-    file="/aluguelCarros/src/aluguelCarrosModels/Cliente.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="192" width="129" x="285" y="542"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="true" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="false" package="true" protected="false" private="false" static="false"/>    
-    </display>  
-  </class>  
-  <class id="5" language="java" name="aluguelCarrosModels.Bicicleta" project="aluguelCarros" 
-    file="/aluguelCarros/src/aluguelCarrosModels/Bicicleta.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="189" width="185" x="460" y="541"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="true" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="false" package="true" protected="false" private="false" static="false"/>    
-    </display>  
-  </class>  
-  <class id="6" language="java" name="aluguelCarrosModels.Carro" project="aluguelCarros" 
-    file="/aluguelCarros/src/aluguelCarrosModels/Carro.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="195" width="212" x="720" y="534"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="true" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="false" package="true" protected="false" private="false" static="false"/>    
-    </display>  
-  </class>  
-  <class id="7" language="java" name="aluguelCarrosModels.Alugar" project="aluguelCarros" 
+  <class id="2" language="java" name="aluguelCarrosModels.Alugar" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosModels/Alugar.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="187" width="163" x="1055" y="535"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="false" package="true" protected="false" private="false" static="false"/>    
+      <operations public="false" package="true" protected="true" private="true" static="false"/>    
     </display>  
   </class>  
-  <package id="8" language="java" name="aluguelCarrosDAO" project="aluguelCarros" 
+  <package id="3" language="java" name="aluguelCarrosDAO" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosDAO" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="527" width="1584" x="14" y="-91"/>    
+    <position height="536" width="2544" x="-87" y="-65"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <interface id="9" language="java" name="aluguelCarrosDAO.IAlugarDAO" project="aluguelCarros" 
-    file="/aluguelCarros/src/aluguelCarrosDAO/IAlugarDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1513" y="-33"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="false" package="true" protected="false" private="false" static="false"/>    
-    </display>  
-  </interface>  
-  <class id="10" language="java" name="aluguelCarrosDAO.ClienteDAO" project="aluguelCarros" 
+  <class id="4" language="java" name="aluguelCarrosDAO.ClienteDAO" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosDAO/ClienteDAO.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="130" y="154"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
@@ -83,43 +29,34 @@
       <operations public="true" package="true" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="aluguelCarrosDAO.CarroDAO" project="aluguelCarros" 
+  <class id="5" language="java" name="aluguelCarrosDAO.CarroDAO" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosDAO/CarroDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1257" y="202"/>    
+    <position height="-1" width="-1" x="1029" y="239"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="false" private="true" static="true"/>      
       <operations public="true" package="true" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <interface id="12" language="java" name="aluguelCarrosDAO.ICarroDAO" project="aluguelCarros" 
+  <interface id="6" language="java" name="aluguelCarrosDAO.ICarroDAO" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosDAO/ICarroDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1256" y="-26"/>    
+    <position height="-1" width="-1" x="1121" y="0"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="false" package="true" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <class id="13" language="java" name="aluguelCarrosDAO.AlugarDAO" project="aluguelCarros" 
-    file="/aluguelCarros/src/aluguelCarrosDAO/AlugarDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1503" y="206"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="false" private="true" static="true"/>      
-      <operations public="true" package="true" protected="false" private="false" static="false"/>    
-    </display>  
-  </class>  
-  <interface id="14" language="java" name="aluguelCarrosDAO.IClienteDAO" project="aluguelCarros" 
+  <interface id="7" language="java" name="aluguelCarrosDAO.IClienteDAO" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosDAO/IClienteDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="118" y="-20"/>    
+    <position height="-1" width="-1" x="118" y="-2"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="false" package="true" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <class id="15" language="java" name="aluguelCarrosDAO.MotoDAO" project="aluguelCarros" 
+  <class id="8" language="java" name="aluguelCarrosDAO.MotoDAO" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosDAO/MotoDAO.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="358" y="159"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
@@ -128,25 +65,25 @@
       <operations public="true" package="true" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <interface id="16" language="java" name="aluguelCarrosDAO.IOnibusDAO" project="aluguelCarros" 
+  <interface id="9" language="java" name="aluguelCarrosDAO.IOnibusDAO" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosDAO/IOnibusDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="896" y="15"/>    
+    <position height="-1" width="-1" x="830" y="44"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="false" package="true" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <interface id="17" language="java" name="aluguelCarrosDAO.IMotoDAO" project="aluguelCarros" 
+  <interface id="10" language="java" name="aluguelCarrosDAO.IMotoDAO" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosDAO/IMotoDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="359" y="-19"/>    
+    <position height="-1" width="-1" x="361" y="15"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="false" package="true" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <class id="18" language="java" name="aluguelCarrosDAO.BicicletaDAO" project="aluguelCarros" 
+  <class id="11" language="java" name="aluguelCarrosDAO.BicicletaDAO" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosDAO/BicicletaDAO.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="599" y="165"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
@@ -155,231 +92,442 @@
       <operations public="true" package="true" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="19" language="java" name="aluguelCarrosDAO.OnibusDAO" project="aluguelCarros" 
+  <class id="12" language="java" name="aluguelCarrosDAO.OnibusDAO" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosDAO/OnibusDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="901" y="238"/>    
+    <position height="-1" width="-1" x="813" y="244"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <interface id="20" language="java" name="aluguelCarrosDAO.IBicicletaDAO" project="aluguelCarros" 
+  <interface id="13" language="java" name="aluguelCarrosDAO.IBicicletaDAO" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosDAO/IBicicletaDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="600" y="-27"/>    
+    <position height="-1" width="-1" x="588" y="9"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="false" package="true" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <package id="21" language="java" name="aluguelCarrosService" project="aluguelCarros" 
+  <package id="14" language="java" name="aluguelCarrosService" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosService" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="833" width="1604" x="8" y="-952"/>    
+    <position height="1089" width="2495" x="-81" y="-1210"/>    
     <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
   </package>  
-  <class id="22" language="java" name="aluguelCarrosService.AlugarService" project="aluguelCarros" 
-    file="/aluguelCarros/src/aluguelCarrosService/AlugarService.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1267" y="-643"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="false" private="true" static="true"/>      
-      <operations public="true" package="true" protected="false" private="false" static="false"/>    
-    </display>  
-  </class>  
-  <class id="23" language="java" name="aluguelCarrosService.ClienteService" project="aluguelCarros" 
+  <class id="15" language="java" name="aluguelCarrosService.ClienteService" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosService/ClienteService.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="154" y="-275"/>    
+    <position height="-1" width="-1" x="118" y="-1013"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="24" language="java" name="aluguelCarrosService.CarroService" project="aluguelCarros" 
+  <class id="16" language="java" name="aluguelCarrosService.CarroService" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosService/CarroService.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1283" y="-256"/>    
+    <position height="-1" width="-1" x="1147" y="-526"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="25" language="java" name="aluguelCarrosService.MotoService" project="aluguelCarros" 
+  <class id="17" language="java" name="aluguelCarrosService.MotoService" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosService/MotoService.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="463" y="-273"/>    
+    <position height="-1" width="-1" x="359" y="-536"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="26" language="java" name="aluguelCarrosService.OnibusService" project="aluguelCarros" 
+  <class id="18" language="java" name="aluguelCarrosService.OnibusService" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosService/OnibusService.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="976" y="-236"/>    
+    <position height="-1" width="-1" x="887" y="-537"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="27" language="java" name="aluguelCarrosService.BicicletaService" project="aluguelCarros" 
+  <class id="19" language="java" name="aluguelCarrosService.BicicletaService" project="aluguelCarros" 
     file="/aluguelCarros/src/aluguelCarrosService/BicicletaService.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="726" y="-242"/>    
+    <position height="-1" width="-1" x="631" y="-536"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <interface id="28" language="java" name="aluguelCarrosService.IAlugarProdService" project="aluguelCarros" 
-    file="/aluguelCarros/src/aluguelCarrosService/IAlugarProdService.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="781" y="-835"/>    
+  <package id="20" language="java" name="view" project="aluguelCarros" file="/aluguelCarros/src/view" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="295" width="2470" x="-25" y="-1574"/>    
+    <display autosize="false" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="21" language="java" name="aluguelCarrosModels.Carro" project="aluguelCarros" 
+    file="/aluguelCarros/src/aluguelCarrosModels/Carro.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="903" y="654"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="aluguelCarrosModels.Bicicleta" project="aluguelCarros" 
+    file="/aluguelCarros/src/aluguelCarrosModels/Bicicleta.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="133" width="97" x="532" y="531"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="aluguelCarrosModels.Cliente" project="aluguelCarros" 
+    file="/aluguelCarros/src/aluguelCarrosModels/Cliente.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="198" width="162" x="46" y="537"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="aluguelCarrosModels.Moto" project="aluguelCarros" 
+    file="/aluguelCarros/src/aluguelCarrosModels/Moto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="296" y="616"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="aluguelCarrosModels.Onibus" project="aluguelCarros" 
+    file="/aluguelCarros/src/aluguelCarrosModels/Onibus.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="440" y="599"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="aluguelCarrosService.AlugarProdutoContext" project="aluguelCarros" 
+    file="/aluguelCarros/src/aluguelCarrosService/AlugarProdutoContext.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1050" y="-986"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <interface id="27" language="java" name="aluguelCarrosService.ProdutoServiceStrategy" project="aluguelCarros" 
+    file="/aluguelCarros/src/aluguelCarrosService/ProdutoServiceStrategy.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="61" width="217" x="1753" y="-954"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="false"/>    
+    </display>  
+  </interface>  
+  <class id="28" language="java" name="aluguelCarrosService.ServiceAlugarBicicleta" project="aluguelCarros" 
+    file="/aluguelCarros/src/aluguelCarrosService/ServiceAlugarBicicleta.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1549" y="-1100"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="aluguelCarrosService.ServiceAlugarOnibus" project="aluguelCarros" 
+    file="/aluguelCarros/src/aluguelCarrosService/ServiceAlugarOnibus.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1558" y="-841"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="aluguelCarrosService.ServiceAlugarMoto" project="aluguelCarros" 
+    file="/aluguelCarros/src/aluguelCarrosService/ServiceAlugarMoto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2244" y="-1103"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="aluguelCarrosService.ServiceAlugarCarro" project="aluguelCarros" 
+    file="/aluguelCarros/src/aluguelCarrosService/ServiceAlugarCarro.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2226" y="-802"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <interface id="32" language="java" name="aluguelCarrosDAO.IAlugarDAOStrategy" project="aluguelCarros" 
+    file="/aluguelCarros/src/aluguelCarrosDAO/IAlugarDAOStrategy.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2036" y="44"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="false" package="true" protected="false" private="false" static="false"/>    
     </display>  
   </interface>  
-  <class id="29" language="java" name="aluguelCarrosService.AlugarBicicletaService" project="aluguelCarros" 
-    file="/aluguelCarros/src/aluguelCarrosService/AlugarBicicletaService.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="674" y="-593"/>    
+  <class id="33" language="java" name="aluguelCarrosDAO.AlugarCarroDAO" project="aluguelCarros" 
+    file="/aluguelCarros/src/aluguelCarrosDAO/AlugarCarroDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2356" y="204"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="false"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="aluguelCarrosDAO.AlugarMotoDAO" project="aluguelCarros" 
+    file="/aluguelCarros/src/aluguelCarrosDAO/AlugarMotoDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2184" y="210"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="aluguelCarrosDAO.AlugarBicicletaDAO" project="aluguelCarros" 
+    file="/aluguelCarros/src/aluguelCarrosDAO/AlugarBicicletaDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2028" y="248"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="aluguelCarrosDAO.AlugarOnibusDAO" project="aluguelCarros" 
+    file="/aluguelCarros/src/aluguelCarrosDAO/AlugarOnibusDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="61" width="129" x="1764" y="234"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="true" protected="false" private="false" static="false"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="aluguelCarrosDAO.AlugarContextDAO" project="aluguelCarros" 
+    file="/aluguelCarros/src/aluguelCarrosDAO/AlugarContextDAO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1614" y="98"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="false" private="false" static="false"/>    
     </display>  
   </class>  
-  <class id="30" language="java" name="aluguelCarrosService.AlugarMotoService" project="aluguelCarros" 
-    file="/aluguelCarros/src/aluguelCarrosService/AlugarMotoService.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="388" y="-586"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="false" private="false" static="false"/>    
-    </display>  
-  </class>  
-  <class id="31" language="java" name="aluguelCarrosService.AlugarOnibusService" project="aluguelCarros" 
-    file="/aluguelCarros/src/aluguelCarrosService/AlugarOnibusService.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="941" y="-599"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="false" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="false" static="false"/>    
-    </display>  
-  </class>  
-  <realization id="32">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="16"/>  
-  </realization>  
-  <realization id="33">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="12"/>  
-  </realization>  
-  <realization id="34">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="28"/>  
-  </realization>  
-  <realization id="35">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="17"/>  
-  </realization>  
-  <realization id="36">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="20"/>  
-  </realization>  
-  <realization id="37">    
-    <end type="SOURCE" refId="29"/>    
-    <end type="TARGET" refId="28"/>  
-  </realization>  
-  <realization id="38">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="9"/>  
-  </realization>  
-  <association id="39">    
+  <association id="38">    
     <end type="SOURCE" refId="26" navigable="false">      
-      <attribute id="40" name="onibusDAO">        
-        <position height="0" width="0" x="-8" y="41"/>      
-      </attribute>      
-      <multiplicity id="41" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-8" y="41"/>      
-      </multiplicity>    
+      <attribute id="39" name="produtoServiceStrategy"/>      
+      <multiplicity id="40" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
+    <end type="TARGET" refId="27" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="42">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="14"/>  
-  </realization>  
-  <realization id="43">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="28"/>  
-  </realization>  
-  <association id="44">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="45" name="carroDAO">        
-        <position height="0" width="0" x="-217" y="-16"/>      
+  <association id="41">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="42" name="motos">        
+        <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="46" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-217" y="-16"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="47">    
-    <end type="SOURCE" refId="31"/>    
-    <end type="TARGET" refId="28"/>  
-  </realization>  
-  <association id="48">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="49" name="bicicletaDAO">        
-        <position height="0" width="0" x="19" y="0"/>      
-      </attribute>      
-      <multiplicity id="50" minimum="0" maximum="1">        
-        <position height="0" width="0" x="19" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="20" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="51">    
-    <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="52" name="clienteDAO">        
-        <position height="0" width="0" x="12" y="10"/>      
-      </attribute>      
-      <multiplicity id="53" minimum="0" maximum="1">        
-        <position height="0" width="0" x="12" y="10"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="54">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="55" name="motoDAO">        
-        <position height="0" width="0" x="2" y="12"/>      
-      </attribute>      
-      <multiplicity id="56" minimum="0" maximum="1">        
-        <position height="0" width="0" x="2" y="12"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="57">    
-    <end type="SOURCE" refId="22" navigable="false">      
-      <attribute id="58" name="carroServ">        
-        <position height="0" width="0" x="-180" y="91"/>      
-      </attribute>      
-      <multiplicity id="59" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-180" y="91"/>      
+      <multiplicity id="43" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="24" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <realization id="44">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="27"/>  
+  </realization>  
+  <realization id="45">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="10"/>  
+  </realization>  
+  <association id="46">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="47" name="motoDAO">        
+        <position height="0" width="0" x="4" y="46"/>      
+      </attribute>      
+      <multiplicity id="48" minimum="0" maximum="1">        
+        <position height="0" width="0" x="4" y="46"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="49">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="50" name="onibusDAO">        
+        <position height="0" width="0" x="-74" y="70"/>      
+      </attribute>      
+      <multiplicity id="51" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-74" y="70"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="52">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="53" name="clientes">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="54" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="55">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="56" name="carroDAO">        
+        <position height="0" width="0" x="-352" y="10"/>      
+      </attribute>      
+      <multiplicity id="57" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-352" y="10"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="58">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="27"/>  
+  </realization>  
+  <association id="59">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="60" name="clienteDAO">        
+        <position height="0" width="0" x="12" y="28"/>      
+      </attribute>      
+      <multiplicity id="61" minimum="0" maximum="1">        
+        <position height="0" width="0" x="12" y="28"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="62">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="32"/>  
+  </realization>  
+  <realization id="63">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="27"/>  
+  </realization>  
+  <association id="64">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="65" name="alugarDAOStrategy"/>      
+      <multiplicity id="66" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="67">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="68" name="carros">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="69" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="70">    
+    <bendpoint x="1173" y="735"/>    
+    <bendpoint x="1097" y="768"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="71" name="idcliente">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="72" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="73">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="74" name="idprod">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="75" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="76">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="77" name="produtoServiceStrategy"/>      
+      <multiplicity id="78" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="79">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <association id="80">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="81" name="bicicletas">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="82" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="83">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <realization id="84">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="9"/>  
+  </realization>  
+  <realization id="85">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="32"/>  
+  </realization>  
+  <realization id="86">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="27"/>  
+  </realization>  
+  <realization id="87">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="32"/>  
+  </realization>  
+  <association id="88">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="89" name="bicicletaDAO">        
+        <position height="0" width="0" x="7" y="36"/>      
+      </attribute>      
+      <multiplicity id="90" minimum="0" maximum="1">        
+        <position height="0" width="0" x="7" y="36"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="91">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <realization id="92">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="32"/>  
+  </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

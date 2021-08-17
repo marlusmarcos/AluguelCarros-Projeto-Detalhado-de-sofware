@@ -8,11 +8,11 @@ import aluguelCarrosModels.Alugar;
 import aluguelCarrosModels.Carro;
 import aluguelCarrosModels.Cliente;
 
-public class AlugarDAO implements IAlugarDAO{
+public class AlugarCarroDAO implements IAlugarDAOStrategy{
 	protected ArrayList<Alugar> alugados;
 	Alugar alugar = new Alugar();
 	protected int setarId =0;// criar automaticamente id para controle
-	public AlugarDAO() {
+	public AlugarCarroDAO() {
 		this.alugados = new ArrayList<Alugar>();
 		//this.setarId = 1;
 	}	
@@ -28,7 +28,7 @@ public class AlugarDAO implements IAlugarDAO{
 		this.alugados.add(alugar);		
 	}
 
-	@Override
+/*	@Override
 	public int remover(int id) {
 		Alugar alugar = new Alugar ();
 		for (Alugar c: alugados) {
@@ -40,13 +40,13 @@ public class AlugarDAO implements IAlugarDAO{
 		alugados.remove(alugar);
 		return alugar.getId();
 	}
-
+*/
 	@Override
 	public int alterar(int id, Alugar alugar) {
 		
 		return 0;
 	}
-
+/*
 	@Override
 	public Alugar buscar(int id) {
 		for (Alugar c : alugados) {
@@ -63,6 +63,7 @@ public class AlugarDAO implements IAlugarDAO{
 		return this.alugados;
 		
 	}
+*/	
 	public int setID () {
 		this.setarId +=1;
 		return this.setarId;
@@ -75,12 +76,12 @@ public class AlugarDAO implements IAlugarDAO{
 		return id;
 	}
 
-
+/*
 	@Override
 	public void calcularPreco(int dias, float preco) {
 	
 		
 	}
-
+*/
 
 }

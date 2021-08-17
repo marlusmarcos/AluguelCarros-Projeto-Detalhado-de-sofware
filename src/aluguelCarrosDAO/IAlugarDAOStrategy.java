@@ -7,13 +7,11 @@ import aluguelCarrosModels.Carro;
 import aluguelCarrosModels.Cliente;
 
 
-public interface IAlugarDAO {
-	int remover (int id);
-	int alterar (int id, Alugar alugar);
-	Alugar buscar (int id);
-	ArrayList<Alugar> buscarAlugados();
-	public int sequenciarId ();
+public interface IAlugarDAOStrategy {
 	void inserir(Carro idcarro, Cliente idcliente, float preco);
-	void calcularPreco(int dias, float preco);
+	int alterar (int id, Alugar alugar);
+	public int sequenciarId ();
+	
+	
 	
 }

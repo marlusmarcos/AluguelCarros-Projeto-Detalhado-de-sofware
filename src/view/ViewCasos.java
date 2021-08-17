@@ -4,27 +4,42 @@ import ServoceExceptioin.ServicoException;
 import aluguelCarrosModels.Alugar;
 import aluguelCarrosModels.Carro;
 import aluguelCarrosModels.Cliente;
+import aluguelCarrosModels.Moto;
+import aluguelCarrosService.AlugarProdutoContext;
 import aluguelCarrosService.AlugarService;
 import aluguelCarrosService.CarroService;
 import aluguelCarrosService.ClienteService;
+import aluguelCarrosService.IAlugarProdService;
+import aluguelCarrosService.MotoService;
+import aluguelCarrosService.ProdutoServiceStrategy;
+import aluguelCarrosService.ServiceAlugarCarro;
 
 public class ViewCasos {
 	//IClien	teDAO clienteDAO = new ClienteDAO();
 				ClienteService clienteDAO = new ClienteService();
 				CarroService carroService = new CarroService();
 				AlugarService alugar = new AlugarService (carroService, clienteDAO);
+				IAlugarProdService alugarProdService = new AlugarProdutoContext();
 				Cliente cliente = new Cliente ();
+				Moto moto = new Moto();
+				ProdutoServiceStrategy produtoCarro = new ServiceAlugarCarro();
+	
 			
 			public void cadastrarClientes() throws ServicoException {
+				alugarProdService.alugarProduto(idcarro, idcliente, qtdDias);
 				cliente.setCpf("01825293466");
 				cliente.setEmail("marlus@gmail.com");
 				cliente.setNome("Marlus Marcos");
 				cliente.setTipo(1);
+				cliente.setCnh('a');
 				Cliente cliente2 = new Cliente ();
 				cliente2.setCpf("01888093466");
 				cliente2.setEmail("marsadadadalus@gmail.com");
 				cliente2.setNome("nohjhjkhme");
-			
+				//moto.setModelo("FAN");
+				//moto.setId(1);
+				//motoService.inserirMoto(moto);
+			//	System.out.println(motoService.buscarMoto(1).getModelo());
 				Cliente cliente3 = new Cliente ();
 				cliente3.setCpf("01634993466");
 				cliente3.setEmail("marlus@xxffgmail.com");
@@ -53,9 +68,9 @@ public class ViewCasos {
 			
 			public void cadastrarCarro () throws ServicoException {
 				Carro carro = new Carro("uno", "kjh4561", "branco", 1,1,(float) 80.0);
-				carroService.inserirCarro(carro);
+				carroService.inserir(carro);
 				Carro carro2 = new Carro("GOL", "mxs4597", "preto", 1,1,(float) 80.0);
-				carroService.inserirCarro(carro2);
+				carroService.inserir(carro2);
 				Carro out = carroService.buscarCarro(1);
 				System.out.println("id:" + out.getId() +"\nModelo: " + out.getModelo());
 				out.setModelo("CERATO");

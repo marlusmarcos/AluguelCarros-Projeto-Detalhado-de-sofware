@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import aluguelCarrosModels.Moto;
 
 public class MotoDAO implements IMotoDAO{
+	ArrayList<Moto> motos = new ArrayList();
 
 	@Override
 	public void inserir(Moto moto) {
-		// TODO Auto-generated method stub
-		
+		this.motos.add(moto);
 	}
 
 	@Override

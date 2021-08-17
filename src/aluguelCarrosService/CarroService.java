@@ -4,14 +4,13 @@ import java.util.ArrayList;
 
 import ServoceExceptioin.ServicoException;
 import aluguelCarrosDAO.CarroDAO;
-import aluguelCarrosDAO.ClienteDAO;
 import aluguelCarrosDAO.ICarroDAO;
 import aluguelCarrosModels.Carro;
 
 public class CarroService {
 	protected ICarroDAO carroDAO = new CarroDAO();
 
-	public void inserirCarro (Carro carro) throws ServicoException  {
+	public void inserir (Carro carro) throws ServicoException  {
 		verificarCarro(carro);
 		carroDAO.inserir(carro);
 	}

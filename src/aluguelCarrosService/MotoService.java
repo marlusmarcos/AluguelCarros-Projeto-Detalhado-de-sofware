@@ -9,8 +9,9 @@ import aluguelCarrosModels.Moto;
 
 public class MotoService {
 	protected IMotoDAO motoDAO = new MotoDAO();
+	
 	public void inserirMoto (Moto moto) throws ServicoException  {
-		verificarMoto(moto);
+		//verificarMoto(moto);
 		motoDAO.inserir(moto);
 	}
 	public void remover (int id) {
@@ -35,7 +36,7 @@ public class MotoService {
 		if (c == null) {
 			erros += "Cliente nulo\n";
 		}
-		if (c.getPlaca().length() != 7) {
+/*		if (c.getPlaca().length() != 7) {
 			erros+="numeracao placa errada\n";
 		}
 		if (c.getDono() != 1 && c.getDono() != 2) {
@@ -46,7 +47,7 @@ public class MotoService {
 		}
 		if (erros.length() > 0) {
 			throw new ServicoException(erros);
-		}
+*/		//}
 		return 1;
 	}
 }
