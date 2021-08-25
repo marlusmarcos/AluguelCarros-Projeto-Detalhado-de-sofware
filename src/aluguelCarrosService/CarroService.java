@@ -1,36 +1,37 @@
 package aluguelCarrosService;
 
-import java.util.ArrayList;
-
 import ServoceExceptioin.ServicoException;
 import aluguelCarrosDAO.CarroDAO;
 import aluguelCarrosDAO.ICarroDAO;
+import aluguelCarrosDAO.IProdutoDAO;
+import aluguelCarrosDAO.ProdutoDAO;
 import aluguelCarrosModels.Carro;
+import aluguelCarrosModels.Produto;
 
-public class CarroService {
-	protected ICarroDAO carroDAO = new CarroDAO();
+public class CarroService implements ProdutoGerenciaStrategy{
+	//protected ICarroDAO carroDAO = new CarroDAO();
+	//protected IProdutoDAO produtoDAO;
 
-	public void inserir (Carro carro) throws ServicoException  {
-		verificarCarro(carro);
-		carroDAO.inserir(carro);
+
+	public CarroService() {
+		super();
+
 	}
-	public void remover (int id) {
+
+	@Override
+	public void inserir(Produto produto, IProdutoDAO produtoDAO) throws ServicoException {
+		verificarCarro((Carro) produto);
+		produtoDAO.inserir(produto);
+		
 		
 	}
-	public void alterar (int id, Carro carro) throws ServicoException {
-		verificarCarro(carro);
-		if (carroDAO.buscar(id) == null) {
-			throw new ServicoException("Carro com id passado não existe!\n");
-		} 
-		this.carroDAO.alterar(id, carro);
-	}
-	public Carro buscarCarro (int id) {
-		return carroDAO.buscar(id);
-	}
-	public ArrayList<Carro> buscarCarros () {
-		return this.carroDAO.buscarCarros();
-	}
 	
+	
+	@Override
+	public void alterar(Produto produto) {
+		// TODO Auto-generated method stub
+		
+	}
 	public int verificarCarro (Carro c) throws ServicoException {
 		String erros = "";
 		if (c == null) {
@@ -50,5 +51,6 @@ public class CarroService {
 		}
 		return 1;
 	}
+
 	
 }

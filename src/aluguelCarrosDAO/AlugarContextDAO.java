@@ -16,6 +16,7 @@ public class AlugarContextDAO {
 public 	int alterar (int id, Alugar alugar) {
 	return 1;
 }
+/*
 public int remover(int id) {
 	Alugar alugar = new Alugar ();
 	Object alugados;
@@ -40,4 +41,5 @@ public	void calcularPreco(int dias, float preco) {
 	public int sequenciarId () {
 		return 0;
 	}
+	*/
 }

@@ -1,4 +1,5 @@
-package aluguelCarrosService;
+
+/*package aluguelCarrosService;
 
 public class AlugarOnibusService implements IAlugarProdService {
 	protected OnibusService onibusService;
@@ -28,3 +29,4 @@ public class AlugarOnibusService implements IAlugarProdService {
 	}
 
 }
+*/

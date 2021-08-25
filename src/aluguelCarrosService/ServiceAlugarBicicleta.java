@@ -1,4 +1,4 @@
-package aluguelCarrosService;
+/*package aluguelCarrosService;
 
 public class ServiceAlugarBicicleta implements ProdutoServiceStrategy  {
 
@@ -9,3 +9,4 @@ public class ServiceAlugarBicicleta implements ProdutoServiceStrategy  {
 	}
 
 }
+*/
