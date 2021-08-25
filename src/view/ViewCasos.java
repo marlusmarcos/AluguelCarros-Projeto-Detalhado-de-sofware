@@ -26,13 +26,13 @@ public class ViewCasos {
 				public void cadastraUmCarro() throws ServicoException {
 					
 					Produto carro = new Carro("uno", "kjh4561", "branco", 1,1,(float) 80.0);
-					Produto carro2 = new Carro("GOL", "mxs4597", "preto", 1,1,(float) 80.0);
+					//Produto carro2 = new Carro("GOL", "mxs4597", "preto", 1,1,(float) 80.0);
 					produtoService.inserir(carro, pgEstrategy);
 					
 					
 				}
 				public void buscarProduto( int id) {
-					System.out.println("aqui: " + produtoService.buscar(id));
+					System.out.println("aqui: " + produtoService.buscar(id).getModelo());
 				}
 				
 				
