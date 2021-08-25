@@ -1,4 +1,4 @@
-package aluguelCarrosService;
+/*package aluguelCarrosService;
 
 public class AlugarMotoService implements IAlugarProdService {
 
@@ -21,3 +21,4 @@ public class AlugarMotoService implements IAlugarProdService {
 	}
 
 }
+*/

@@ -1,6 +1,5 @@
 package aluguelCarrosModels;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 public class Alugar {
@@ -11,7 +10,7 @@ public class Alugar {
 	public void setId(int id) {
 		this.id = id;
 	}
-	protected Carro idprod;
+	protected Produto idprod;
 	protected Cliente idcliente;
 	protected Date dataInicio;
 	protected Date dataFim;
@@ -42,11 +41,11 @@ public class Alugar {
 	public void setPreco(float preco) {
 		this.preco = preco;
 	}
-	public Carro getCarro() {
+	public Produto getProduto() {
 		return idprod;
 	}
-	public void setCarro(Carro carro) {
-		this.idprod = carro;
+	public void setCarro(Produto produto) {
+		this.idprod = produto;
 	}
 	public Cliente getCliente() {
 		return idcliente;

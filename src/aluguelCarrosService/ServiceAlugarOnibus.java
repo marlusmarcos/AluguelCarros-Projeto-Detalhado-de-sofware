@@ -1,4 +1,4 @@
-package aluguelCarrosService;
+/*package aluguelCarrosService;
 
 public class ServiceAlugarOnibus implements ProdutoServiceStrategy{
 
@@ -10,3 +10,4 @@ public class ServiceAlugarOnibus implements ProdutoServiceStrategy{
 	
 
 }
+*/
