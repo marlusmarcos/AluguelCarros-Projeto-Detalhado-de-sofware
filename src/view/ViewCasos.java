@@ -1,46 +1,45 @@
 package view;
 
 import ServoceExceptioin.ServicoException;
+import aluguelCarrosModels.Alugar;
 import aluguelCarrosModels.Carro;
 import aluguelCarrosModels.Cliente;
-import aluguelCarrosModels.Moto;
 import aluguelCarrosModels.Produto;
+import aluguelCarrosService.AlugarProdutoContext;
 import aluguelCarrosService.CarroService;
 import aluguelCarrosService.ClienteService;
 import aluguelCarrosService.ContextProdutoService;
 import aluguelCarrosService.ProdutoGerenciaStrategy;
+import aluguelCarrosService.ProdutoServiceStrategy;
+import aluguelCarrosService.ServiceAlugarCarro;
 
 public class ViewCasos {
-	//IClien	teDAO clienteDAO = new ClienteDAO();
-				ClienteService clienteDAO = new ClienteService();
-				//CarroService carroService = new CarroService();
-				//AlugarService alugar = new AlugarService (carroService, clienteDAO);
-				//IAlugarProdService alugarProdService = new AlugarProdutoContext();
-				Cliente cliente = new Cliente ();
 
-				//ProdutoServiceStrategy produtoCarro = new ServiceAlugarCarro();
+				ClienteService clienteDAO = new ClienteService();
+				Cliente cliente = new Cliente ();
 				ContextProdutoService produtoService = new ContextProdutoService();
 				ProdutoGerenciaStrategy pgEstrategy = new CarroService();
-				
-				
+				AlugarProdutoContext alugarService = new AlugarProdutoContext(produtoService); 
+				ProdutoServiceStrategy alugarCarro = new ServiceAlugarCarro();
+
 				public void cadastraUmCarro() throws ServicoException {
-					
 					Produto carro = new Carro("uno", "kjh4561", "branco", 1,1,(float) 80.0);
-					//Produto carro2 = new Carro("GOL", "mxs4597", "preto", 1,1,(float) 80.0);
+					Produto carro2 = new Carro("GOL", "mxs4597", "preto", 1,1,(float) 80.0);
 					produtoService.inserir(carro, pgEstrategy);
-					
-					
+					produtoService.inserir(carro2, pgEstrategy);
 				}
 				public void buscarProduto( int id) {
 					System.out.println("aqui: " + produtoService.buscar(id).getModelo());
 				}
 				
 				
+				public void buscarTodos() {
+					for (Produto p : produtoService.buscarTodos()) {
+						System.out.println("classe: " + p.getModelo());
+					}
+				}
 				
-				
-			
 			public void cadastrarClientes() throws ServicoException {
-				//alugarProdService.alugarProduto(idcarro, idcliente, qtdDias);
 				cliente.setCpf("01825293466");
 				cliente.setEmail("marlus@gmail.com");
 				cliente.setNome("Marlus Marcos");
@@ -79,9 +78,17 @@ public class ViewCasos {
 				System.out.println("id: " + c.getId());
 			
 			}
+			public void alugarUmProduto() {
+				alugarService.alugarProduto(1, 1, 2, alugarCarro, clienteDAO);
+			}
+			
+			public void carrosAlugados() {
+				Alugar alugar = alugarService.buscar(1);
+				System.out.println("Cliente: " + alugar.getCliente().getNome() + "\nCarro: " + alugar.getProduto().getModelo());
+			}
 			
 			public void cadastrarCarro () throws ServicoException {
-				Carro carro = new Carro("uno", "kjh4561", "branco", 1,1,(float) 80.0);
+				Carro carro = new Carro("", "kjh4561", "branco", 1,1,(float) 80.0);
 				//carroService.inserir(carro);
 				Carro carro2 = new Carro("GOL", "mxs4597", "preto", 1,1,(float) 80.0);
 				//carroService.inserir(carro2);

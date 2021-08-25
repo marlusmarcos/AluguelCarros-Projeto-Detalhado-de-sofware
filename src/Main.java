@@ -16,16 +16,11 @@ public class Main {
 		vw.cadastrarClientes();
 //		vw.cadastrarCarro();
 		vw.alterarCliente();
-//		vw.carrosDisponiveis();
-//		vw.alugarCarro(1,1, 8);
-//		vw.carrosDisponiveis();
-//		System.out.println("CARROS ALUGADOS =================");
-//		vw.carrosAlugados();
-//		vw.carrosClienteAlugados();
-//		System.out.println("Date:" + date.getDate() + "\nMes: " + date.getMonth() + "\nAno: " + (date.getYear()+1900));
-//		vw.informar();
 		vw.cadastraUmCarro();
 		vw.buscarProduto(1);
+		vw.buscarTodos();
+		vw.alugarUmProduto();
+		vw.carrosAlugados();
 		
 	}
 	

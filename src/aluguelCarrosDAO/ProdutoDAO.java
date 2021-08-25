@@ -39,8 +39,7 @@ public class ProdutoDAO implements IProdutoDAO {
 
 	@Override
 	public ArrayList<Produto> buscarProdutos() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.produtos;
 	}
 
 	

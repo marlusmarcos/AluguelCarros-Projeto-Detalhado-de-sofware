@@ -1,5 +1,7 @@
 package aluguelCarrosService;
 
+import java.util.ArrayList;
+
 import ServoceExceptioin.ServicoException;
 import aluguelCarrosDAO.CarroDAO;
 import aluguelCarrosDAO.ICarroDAO;
@@ -9,14 +11,8 @@ import aluguelCarrosModels.Produto;
 
 public class ContextProdutoService {
 	protected ICarroDAO carroDAO = new CarroDAO();
-	//protected IProdutoDAO produtoDAO;
-	
-//	public ContextProdutoService(ProdutoGerenciaStrategy produtoGerencia) {
-//		super();
-//		this.produtoGerencia = produtoGerencia;
-//	}
 	protected IProdutoDAO produtoDAO = new ProdutoDAO();
-	//ProdutoGerenciaStrategy produtoGerencia;
+
 	
 
 	public void inserir (Produto produto, ProdutoGerenciaStrategy produtoGerencia) throws ServicoException  {
@@ -25,6 +21,9 @@ public class ContextProdutoService {
 	}
 	public Produto buscar(int id) {
 		return this.produtoDAO.buscar(id);
+	}
+	public ArrayList<Produto> buscarTodos() {
+		return produtoDAO.buscarProdutos();
 	}
 	
 }
