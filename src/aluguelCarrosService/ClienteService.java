@@ -1,5 +1,7 @@
 package aluguelCarrosService;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ServoceExceptioin.ServicoException;
 import aluguelCarrosDAO.ClienteDAO;
@@ -55,13 +57,26 @@ public class ClienteService {
 	public int verificarCliente (Cliente c) throws ServicoException {
 		String erros = "";
 		if (c == null) {
-			erros += "Cliente nulo\n";
+			erros += "Cliente nulo!\n";
 		}
 		if (c.getNome().length() < 1) {
-			erros+="nome vazio\n";
+			erros+="Nome vazio!\n";
 		}
 		if (c.getCpf().length() != 11) {
-			erros+="cpf nÃ£o tem 11 digitos!\n";
+			erros+="CPF não tem 11 digitos!\n";
+		}
+		if (c.getCnh() == null || c.getCnh() == "") {
+			erros+="CNH vazio!\n";
+		}
+		if(c.getEmail() != null && c.getEmail() > 0) {
+			String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+			Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+			Matcher matcher = pattern.matcher(c.getEmail());
+			if(!matcher.matches()) {
+				erros+="O e-mail não é válido!\n";
+			}
+		}else {
+			erros+="O e-mail está vazio!\n";
 		}
 		if (erros.length() > 0) {
 			throw new ServicoException(erros);

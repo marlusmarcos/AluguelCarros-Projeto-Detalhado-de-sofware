@@ -24,15 +24,24 @@ public class ViewCasos {
 				
 				
 				public void cadastraUmCarro() throws ServicoException {
+<<<<<<< Updated upstream
 					
 					Produto carro = new Carro("uno", "kjh4561", "branco", 1,1,(float) 80.0);
 					Produto carro2 = new Carro("GOL", "mxs4597", "preto", 1,1,(float) 80.0);
+=======
+					Produto carro = new Carro("Hb20", "kjh4561", "branco", 1,1,(float) 80.0);
+					Produto carro2 = new Carro("Celta", "noa4597", "prata", 1,1,(float) -80.0);
+>>>>>>> Stashed changes
 					produtoService.inserir(carro, pgEstrategy);
 					
 					
 				}
 				public void buscarProduto( int id) {
+<<<<<<< Updated upstream
 					System.out.println("aqui: " + produtoService.buscar(id));
+=======
+					System.out.println("aquii: " + produtoService.buscar(id).getModelo());
+>>>>>>> Stashed changes
 				}
 				
 				
@@ -46,6 +55,7 @@ public class ViewCasos {
 				cliente.setNome("Marlus Marcos");
 				cliente.setTipo(1);
 				cliente.setCnh('a');
+				
 				Cliente cliente2 = new Cliente ();
 				cliente2.setCpf("01888093466");
 				cliente2.setEmail("marsadadadalus@gmail.com");
@@ -54,10 +64,11 @@ public class ViewCasos {
 				//moto.setId(1);
 				//motoService.inserirMoto(moto);
 			//	System.out.println(motoService.buscarMoto(1).getModelo());
+			
 				Cliente cliente3 = new Cliente ();
 				cliente3.setCpf("01634993466");
-				cliente3.setEmail("marlus@xxffgmail.com");
-				cliente3.setNome("nomsfse");
+				cliente3.setEmail("andre@gmail.com");
+				cliente3.setNome("José André");
 //				//cliente.setTipo(1);
 				clienteDAO.insert(cliente);
 				clienteDAO.insert(cliente2);

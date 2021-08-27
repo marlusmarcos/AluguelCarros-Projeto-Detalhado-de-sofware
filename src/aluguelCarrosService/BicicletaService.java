@@ -31,16 +31,22 @@ public class BicicletaService {
 		return this.bicicletaDAO.buscarBicicletas();
 	}
 	
-	public int verificarBicicleta (Bicicleta c) throws ServicoException {
+	public int verificarBicicleta (Bicicleta b) throws ServicoException {
 		String erros = "";
-		if (c == null) {
-			erros += "Cliente nulo\n";
+		if (b == null) {
+			erros += "Bicicleta nula!\n";
 		}
-		if (c.getDono() != 1 && c.getDono() != 2) {
-			erros+="o dono deve ser 1 ou 2\n";
+		if (b.getDono() != 1 && b.getDono() != 2) {
+			erros+="O dono deve ser 1 ou 2!\n";
 		}
-		if (c.getModelo() == "") {
-			erros += "o modelo est√° vazio\n";
+		if (b.getModelo() == "" || b.getModelo() == null) {
+			erros += "O modelo est· vazio!\n";
+		}
+		if (b.getCor() == "" || b.getCor() == null) {
+			erros += "A cor est· vazia!\n";
+		}
+		if (b.getPreco() < 0) {
+			erros += "O preÁo inserido È inv·lido!\n";
 		}
 		if (erros.length() > 0) {
 			throw new ServicoException(erros);

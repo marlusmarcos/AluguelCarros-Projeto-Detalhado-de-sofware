@@ -35,16 +35,22 @@ public class CarroService implements ProdutoGerenciaStrategy{
 	public int verificarCarro (Carro c) throws ServicoException {
 		String erros = "";
 		if (c == null) {
-			erros += "Cliente nulo\n";
+			erros += "Carro nulo!\n";
 		}
 		if (c.getPlaca().length() != 7) {
-			erros+="numeracao placa errada\n";
+			erros+="Numeracao placa errada!\n";
 		}
 		if (c.getDono() != 1 && c.getDono() != 2) {
-			erros+="o dono deve ser 1 ou 2\n";
+			erros+="O dono deve ser 1 ou 2!\n";
 		}
-		if (c.getModelo() == "") {
-			erros += "o modelo est√° vazio\n";
+		if (c.getModelo() == "" || c.getModelo() == null) {
+			erros += "O modelo est· vazio!\n";
+		}
+		if (c.getCor() == "" || c.getCor() == null) {
+			erros += "A cor est· vazia!\n";
+		}
+		if (c.getPreco() < 0) {
+			erros += "O preÁo inserido È inv·lido!\n";
 		}
 		if (erros.length() > 0) {
 			throw new ServicoException(erros);

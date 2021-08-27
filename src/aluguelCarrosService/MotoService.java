@@ -31,23 +31,29 @@ public class MotoService {
 		return this.motoDAO.buscarMotos();
 	}
 	
-	public int verificarMoto (Moto c) throws ServicoException {
+	public int verificarMoto (Moto m) throws ServicoException {
 		String erros = "";
-		if (c == null) {
-			erros += "Cliente nulo\n";
+		if (m == null) {
+			erros += "Moto nula!\n";
 		}
-/*		if (c.getPlaca().length() != 7) {
-			erros+="numeracao placa errada\n";
+		if (m.getPlaca().length() != 7) {
+			erros+="Numeração da placa está errada!\n";
 		}
-		if (c.getDono() != 1 && c.getDono() != 2) {
-			erros+="o dono deve ser 1 ou 2\n";
+		if (m.getDono() != 1 && m.getDono() != 2) {
+			erros+="O dono deve ser 1 ou 2!\n";
 		}
-		if (c.getModelo() == "") {
-			erros += "o modelo estÃ¡ vazio\n";
+		if (m.getModelo() == "" || m.getModelo() == null) {
+			erros += "O modelo está vazio!\n";
+		}
+		if (m.getCor() == "" || m.getCor() == null) {
+			erros += "A cor está vazia!\n";
+		}
+		if (m.getPreco() < 0) {
+			erros += "O preço inserido é inválido!\n";
 		}
 		if (erros.length() > 0) {
 			throw new ServicoException(erros);
-*/		//}
+		}
 		return 1;
 	}
 }
