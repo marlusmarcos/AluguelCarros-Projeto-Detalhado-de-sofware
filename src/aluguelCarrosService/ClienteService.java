@@ -58,25 +58,26 @@ public class ClienteService {
 		String erros = "";
 		if (c == null) {
 			erros += "Cliente nulo!\n";
-		}
-		if (c.getNome().length() < 1) {
-			erros+="Nome vazio!\n";
-		}
-		if (c.getCpf().length() != 11) {
-			erros+="CPF não tem 11 digitos!\n";
-		}
-		if (c.getCnh() == null || c.getCnh() == "") {
-			erros+="CNH vazio!\n";
-		}
-		if(c.getEmail() != null && c.getEmail() > 0) {
-			String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
-			Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
-			Matcher matcher = pattern.matcher(c.getEmail());
-			if(!matcher.matches()) {
-				erros+="O e-mail não é válido!\n";
-			}
 		}else {
-			erros+="O e-mail está vazio!\n";
+			if (c.getNome().length() < 1) {
+				erros+="Nome vazio!\n";
+			}
+			if (c.getCpf().length() != 11) {
+				erros+="CPF não tem 11 digitos!\n";
+			}
+			if (c.getCnh() == null || c.getCnh() == "") {
+				erros+="CNH vazio!\n";
+			}
+			if(c.getEmail() != null && c.getEmail() > 0) {
+				String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+				Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+				Matcher matcher = pattern.matcher(c.getEmail());
+				if(!matcher.matches()) {
+					erros+="O e-mail não é válido!\n";
+				}
+			}else {
+				erros+="O e-mail está vazio!\n";
+			}
 		}
 		if (erros.length() > 0) {
 			throw new ServicoException(erros);

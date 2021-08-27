@@ -35,21 +35,22 @@ public class MotoService {
 		String erros = "";
 		if (m == null) {
 			erros += "Moto nula!\n";
-		}
-		if (m.getPlaca().length() != 7) {
-			erros+="Numeração da placa está errada!\n";
-		}
-		if (m.getDono() != 1 && m.getDono() != 2) {
-			erros+="O dono deve ser 1 ou 2!\n";
-		}
-		if (m.getModelo() == "" || m.getModelo() == null) {
-			erros += "O modelo está vazio!\n";
-		}
-		if (m.getCor() == "" || m.getCor() == null) {
-			erros += "A cor está vazia!\n";
-		}
-		if (m.getPreco() < 0) {
-			erros += "O preço inserido é inválido!\n";
+		}else {
+			if (m.getPlaca().length() != 7) {
+				erros+="Numeração da placa está errada!\n";
+			}
+			if (m.getDono() != 1 && m.getDono() != 2) {
+				erros+="O dono deve ser 1 ou 2!\n";
+			}
+			if (m.getModelo() == "" || m.getModelo() == null) {
+				erros += "O modelo está vazio!\n";
+			}
+			if (m.getCor() == "" || m.getCor() == null) {
+				erros += "A cor está vazia!\n";
+			}
+			if (m.getPreco() < 0) {
+				erros += "O preço inserido é inválido!\n";
+			}
 		}
 		if (erros.length() > 0) {
 			throw new ServicoException(erros);

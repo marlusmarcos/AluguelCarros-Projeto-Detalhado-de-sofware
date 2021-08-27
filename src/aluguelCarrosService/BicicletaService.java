@@ -35,18 +35,19 @@ public class BicicletaService {
 		String erros = "";
 		if (b == null) {
 			erros += "Bicicleta nula!\n";
-		}
-		if (b.getDono() != 1 && b.getDono() != 2) {
-			erros+="O dono deve ser 1 ou 2!\n";
-		}
-		if (b.getModelo() == "" || b.getModelo() == null) {
-			erros += "O modelo está vazio!\n";
-		}
-		if (b.getCor() == "" || b.getCor() == null) {
-			erros += "A cor está vazia!\n";
-		}
-		if (b.getPreco() < 0) {
-			erros += "O preço inserido é inválido!\n";
+		}else {
+			if (b.getDono() != 1 && b.getDono() != 2) {
+				erros+="O dono deve ser 1 ou 2!\n";
+			}
+			if (b.getModelo() == "" || b.getModelo() == null) {
+				erros += "O modelo está vazio!\n";
+			}
+			if (b.getCor() == "" || b.getCor() == null) {
+				erros += "A cor está vazia!\n";
+			}
+			if (b.getPreco() < 0) {
+				erros += "O preço inserido é inválido!\n";
+			}
 		}
 		if (erros.length() > 0) {
 			throw new ServicoException(erros);
