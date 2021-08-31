@@ -10,7 +10,7 @@ import aluguelCarrosModels.Produto;
 
 public class CarroService implements ProdutoGerenciaStrategy{
 	//protected ICarroDAO carroDAO = new CarroDAO();
-	//protected IProdutoDAO produtoDAO;
+	protected ProdutoDAO produtoDAO;
 
 
 	public CarroService() {

@@ -3,43 +3,40 @@ package aluguelCarrosDAO;
 import java.util.ArrayList;
 
 import aluguelCarrosModels.Alugar;
-import aluguelCarrosModels.Carro;
 import aluguelCarrosModels.Cliente;
+import aluguelCarrosModels.Produto;
 import aluguelCarrosService.ProdutoServiceStrategy;
 
-public class AlugarContextDAO {
-	IAlugarDAOStrategy alugarDAOStrategy;
-	ProdutoServiceStrategy produtoServiceStrategy;
-	public void inserir(Carro idcarro, Cliente idcliente, float preco) {
-		
+public class AlugarContextDAO implements IAlugarDAO{
+	ArrayList <Alugar> alugados;
+	protected int setarId;
+	public AlugarContextDAO() {
+		this.alugados = new ArrayList<Alugar>();
 	}
-public 	int alterar (int id, Alugar alugar) {
-	return 1;
-}
-/*
-public int remover(int id) {
-	Alugar alugar = new Alugar ();
-	Object alugados;
-	for (Alugar c: alugados) {
-		if (c.getId() == id) {
-			alugar = c;
-			break;
-		}
+
+	public void setSetarId() {
+		this.setarId +=1;
 	}
-	alugados.remove(alugar);
-	return alugar.getId();
-}	
-	public Alugar buscar (int id) {
+	public int sequenciarID() {
+		setSetarId();
+		return this.setarId;
+	}
+
+	
+	
+	public void inserir(Produto produto, Cliente cliente, float preco) {
 		Alugar alugar = new Alugar();
-		return alugar;
+		alugar.setId(sequenciarID());
+		alugar.setCarro(produto);
+		alugar.setCliente(cliente);
+		alugar.setPreco(preco);
+		alugados.add(alugar);
+	
 	}
-public 	ArrayList<Alugar> buscarAlugados() {
-	return null;
-}
-public	void calcularPreco(int dias, float preco) {
-}
-	public int sequenciarId () {
-		return 0;
+	public 	int alterar (int id, Alugar alugar) {
+		return 1;
 	}
-	*/
+	public Alugar buscar (int id) {
+		return alugados.get(id-1);
+	}
 }
