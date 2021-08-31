@@ -15,12 +15,15 @@ public class Main {
 		ViewCasos vw = new ViewCasos();
 		vw.cadastrarClientes();
 //		vw.cadastrarCarro();
-		vw.alterarCliente();
+		//vw.alterarCliente();
 		vw.cadastraUmCarro();
 		vw.buscarProduto(1);
 		vw.buscarTodos();
 		vw.alugarUmProduto();
 		vw.carrosAlugados();
+		System.out.println("CARROS DISPONÍVEIS");
+		vw.buscarProdTodos();
+		
 		
 	}
 	
