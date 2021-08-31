@@ -1,9 +1,10 @@
-import aluguelCarrosDAO.AlugarContextDAO;
+/*
+//import aluguelCarrosDAO.AlugarContextDAO;
 import aluguelCarrosDAO.IAlugarDAO;
 import aluguelCarrosModels.Cliente;
 import aluguelCarrosModels.Produto;
 
-package aluguelCarrosService;
+//package aluguelCarrosService;
 
 public class ServiceAlugarMoto implements ProdutoServiceStrategy{
 
@@ -20,3 +21,4 @@ AlugarContextDAO al = new AlugarContextDAO();
 	}
 	public void validar () {};
 }
+*/

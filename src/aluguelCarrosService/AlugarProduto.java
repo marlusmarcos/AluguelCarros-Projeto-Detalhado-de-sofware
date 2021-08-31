@@ -10,7 +10,7 @@ public class AlugarProduto {
 	ProdutoServiceStrategy p;
 	protected IAlugarDAO alugarContextDAO = new AlugarContextDAO();
 
-	public AlugarProdutoContext(ContextProdutoService produtoService) {
+	public AlugarProduto(ContextProdutoService produtoService) {
 		super();
 		this.produtoService = produtoService;
 	}

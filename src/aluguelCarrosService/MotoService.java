@@ -1,4 +1,4 @@
-package aluguelCarrosService;
+/*package aluguelCarrosService;
 
 import java.util.ArrayList;
 
@@ -41,7 +41,8 @@ public class MotoService {
 		}
 		if (erros.length() > 0) {
 			throw new ServicoException(erros);
-*/		//}
+		//}
 		return 1;
 	}
 }
+*/

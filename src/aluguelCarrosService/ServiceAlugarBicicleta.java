@@ -1,3 +1,4 @@
+/*
 import aluguelCarrosDAO.AlugarContextDAO;
 import aluguelCarrosDAO.IAlugarDAO;
 import aluguelCarrosModels.Cliente;
@@ -20,3 +21,4 @@ public class ServiceAlugarBicicleta implements ProdutoServiceStrategy  {
 	}
 	public void validar () {};
 }
+*/

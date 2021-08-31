@@ -5,7 +5,8 @@ import aluguelCarrosModels.Alugar;
 import aluguelCarrosModels.Carro;
 import aluguelCarrosModels.Cliente;
 import aluguelCarrosModels.Produto;
-import aluguelCarrosService.AlugarProdutoContext;
+import aluguelCarrosService.AlugarProduto;
+import aluguelCarrosService.AlugarProduto;
 import aluguelCarrosService.CarroService;
 import aluguelCarrosService.ClienteService;
 import aluguelCarrosService.ContextProdutoService;
@@ -17,9 +18,10 @@ public class ViewCasos {
 
 				ClienteService clienteDAO = new ClienteService();
 				Cliente cliente = new Cliente ();
+				
 				ContextProdutoService produtoService = new ContextProdutoService();
 				ProdutoGerenciaStrategy pgEstrategy = new CarroService();
-				AlugarProdutoContext alugarService = new AlugarProdutoContext(produtoService); 
+				AlugarProduto alugarService = new AlugarProduto(produtoService); 
 				ProdutoServiceStrategy alugarCarro = new ServiceAlugarCarro();
 
 				public void cadastraUmCarro() throws ServicoException {
@@ -44,7 +46,7 @@ public class ViewCasos {
 				cliente.setEmail("marlus@gmail.com");
 				cliente.setNome("Marlus Marcos");
 				cliente.setTipo(1);
-				cliente.setCnh('a');
+				cliente.setCnh('B');
 				Cliente cliente2 = new Cliente ();
 				cliente2.setCpf("01888093466");
 				cliente2.setEmail("marsadadadalus@gmail.com");
