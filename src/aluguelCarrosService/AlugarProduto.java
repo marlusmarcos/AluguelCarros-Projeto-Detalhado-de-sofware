@@ -5,8 +5,9 @@ import aluguelCarrosDAO.AlugarContextDAO;
 import aluguelCarrosDAO.IAlugarDAO;
 import aluguelCarrosModels.Alugar;
 
-public class AlugarProdutoContext {
+public class AlugarProduto {
 	ContextProdutoService produtoService;
+	ProdutoServiceStrategy p;
 	protected IAlugarDAO alugarContextDAO = new AlugarContextDAO();
 
 	public AlugarProdutoContext(ContextProdutoService produtoService) {

@@ -1,11 +1,12 @@
 package aluguelCarrosService;
 
+import aluguelCarrosDAO.AlugarContextDAO;
 import aluguelCarrosDAO.IAlugarDAO;
 import aluguelCarrosModels.Cliente;
 import aluguelCarrosModels.Produto;
 
 public class ServiceAlugarCarro  implements ProdutoServiceStrategy{
-
+	AlugarContextDAO al = new AlugarContextDAO();
 	@Override
 	public void alugar(int idProduto, int idCliente, int qtdDias, ContextProdutoService produtoService,
 			ClienteService clienteService, IAlugarDAO alugarContextDAO) {
@@ -16,6 +17,7 @@ public class ServiceAlugarCarro  implements ProdutoServiceStrategy{
 		alugarContextDAO.inserir(produto, cliente, preco);
 		
 	}
+	public void validar () {};
 	
 
 

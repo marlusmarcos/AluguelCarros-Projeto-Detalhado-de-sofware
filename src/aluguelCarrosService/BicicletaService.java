@@ -5,31 +5,28 @@ import java.util.ArrayList;
 import ServoceExceptioin.ServicoException;
 import aluguelCarrosDAO.BicicletaDAO;
 import aluguelCarrosDAO.IBicicletaDAO;
+import aluguelCarrosDAO.ProdutoDAO;
 import aluguelCarrosModels.Bicicleta;
 
 
 public class BicicletaService {
-	protected IBicicletaDAO bicicletaDAO = new BicicletaDAO();
-	public void inserirBicileta (Bicicleta bicicleta) throws ServicoException  {
+	protected ProdutoDAO bicicletaDAO = new ProdutoDAO();
+	ProdutoGerenciaStrategy pro;
+	public void inserirBicileta (Produto bicicleta) throws ServicoException  {
 		verificarBicicleta(bicicleta);
 		bicicletaDAO.inserir(bicicleta);
 	}
 	public void remover (int id) {
 		
 	}
-	public void alterar (int id, Bicicleta bicicleta) throws ServicoException {
+	public void alterar (int id, Produto bicicleta) throws ServicoException {
 		verificarBicicleta(bicicleta);
 		if (bicicletaDAO.buscar(id) == null) {
 			throw new ServicoException("Carro com id passado não existe!\n");
 		} 
 		this.bicicletaDAO.alterar(id, bicicleta);
 	}
-	public Bicicleta buscarCarro (int id) {
-		return bicicletaDAO.buscar(id);
-	}
-	public ArrayList<Bicicleta> buscarCarros () {
-		return this.bicicletaDAO.buscarBicicletas();
-	}
+
 	
 	public int verificarBicicleta (Bicicleta c) throws ServicoException {
 		String erros = "";

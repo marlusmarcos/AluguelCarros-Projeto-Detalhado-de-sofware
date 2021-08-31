@@ -11,8 +11,8 @@ import aluguelCarrosModels.Produto;
 
 public class ContextProdutoService {
 	protected ICarroDAO carroDAO = new CarroDAO();
-	protected IProdutoDAO produtoDAO = new ProdutoDAO();
-
+	protected ProdutoDAO produtoDAO = new ProdutoDAO();
+	ProdutoGerenciaStrategy produtoGerencia;
 	
 
 	public void inserir (Produto produto, ProdutoGerenciaStrategy produtoGerencia) throws ServicoException  {
