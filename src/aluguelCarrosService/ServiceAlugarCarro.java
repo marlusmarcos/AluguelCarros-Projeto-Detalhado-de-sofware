@@ -17,26 +17,29 @@ public class ServiceAlugarCarro  implements ProdutoServiceStrategy{
 		//fazer validações
 		try {
 			if (validar(cliente, produto)) {
+				produto.setStatus(0);
+				System.out.println("CARRO ALUGADO COM SUCESSO!\n>>>> cliente: " + cliente.getNome() + "\n>>>> Carro: " + produto.getModelo());
 				alugarContextDAO.inserir(produto, cliente, preco);
-				
 			}
 		} catch (ServicoException e) {
 			
 			e.printStackTrace();
 		}
 		
-		alugarContextDAO.inserir(produto, cliente, preco);
+	
 		
 	}
 	@Override
 	public boolean validar (Cliente cliente, Produto carro) throws ServicoException {
 		String erros = "";
 		if (cliente.getCnh() < 'B' || cliente.getCnh() > 'E') {
-			erros += "A CNH do cliente não tem autorização para alugar o carro";
-			if (erros.length() > 0) {
-				throw new ServicoException(erros);
-			}
-			return false;
+			erros += "A CNH do cliente não tem autorização para alugar o carro\b";
+		}	
+		if (carro.getStatus() != 1) {
+				erros += "o carro não está disponível para ser alugado";
+		}
+		if (erros.length() > 0) {
+			throw new ServicoException(erros);
 		}
 		return true;
 		

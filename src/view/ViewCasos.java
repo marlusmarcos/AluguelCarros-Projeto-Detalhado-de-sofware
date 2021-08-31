@@ -40,21 +40,24 @@ public class ViewCasos {
 						System.out.println("classe: " + p.getModelo());
 					}
 				}
+				public void buscarProdTodos() {
+					for (Produto p : produtoService.buscarTodos()) {
+						if (p.getStatus() == 1)
+						System.out.println("classe: " + p.getModelo());
+					}
+				}
 				
 			public void cadastrarClientes() throws ServicoException {
 				cliente.setCpf("01825293466");
 				cliente.setEmail("marlus@gmail.com");
 				cliente.setNome("Marlus Marcos");
 				cliente.setTipo(1);
-				cliente.setCnh('B');
+				cliente.setCnh('A');
 				Cliente cliente2 = new Cliente ();
 				cliente2.setCpf("01888093466");
 				cliente2.setEmail("marsadadadalus@gmail.com");
-				cliente2.setNome("nohjhjkhme");
-				//moto.setModelo("FAN");
-				//moto.setId(1);
-				//motoService.inserirMoto(moto);
-			//	System.out.println(motoService.buscarMoto(1).getModelo());
+				cliente2.setNome("Teste OK");
+				cliente2.setCnh('B');
 				Cliente cliente3 = new Cliente ();
 				cliente3.setCpf("01634993466");
 				cliente3.setEmail("marlus@xxffgmail.com");
@@ -81,10 +84,16 @@ public class ViewCasos {
 			
 			}
 			public void alugarUmProduto() {
+				System.out.println("=******* ALUGANDO UM CARRO COM CATEROGIA DIFERENTE *******=");
 				alugarService.alugarProduto(1, 1, 2, alugarCarro, clienteDAO);
+				System.out.println("=******* ALUGANDO UM CARRO COM CATEROGIA CORRETA *******=");
+				alugarService.alugarProduto(1, 2, 2, alugarCarro, clienteDAO);
+				System.out.println("=******* ALUGANDO UM CARRO QUE JÁ FOI ALUGADO *******=");
+				alugarService.alugarProduto(1, 3, 2, alugarCarro, clienteDAO);
 			}
 			
 			public void carrosAlugados() {
+				System.out.println("MOSTRANDO CARROS ALUGADOS: ");
 				Alugar alugar = alugarService.buscar(1);
 				System.out.println("Cliente: " + alugar.getCliente().getNome() + "\nCarro: " + alugar.getProduto().getModelo());
 			}

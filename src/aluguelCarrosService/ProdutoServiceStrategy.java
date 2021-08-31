@@ -11,4 +11,5 @@ public interface ProdutoServiceStrategy {
 	//void validar();
 	boolean validar(Cliente cliente, Produto carro) throws ServicoException;
 	
+	
 }

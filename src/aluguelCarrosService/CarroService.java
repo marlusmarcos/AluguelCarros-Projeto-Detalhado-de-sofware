@@ -35,7 +35,7 @@ public class CarroService implements ProdutoGerenciaStrategy{
 	public int verificarCarro (Carro c) throws ServicoException {
 		String erros = "";
 		if (c == null) {
-			erros += "Cliente nulo\n";
+			erros += "Carro está nulo\n";
 		}
 		if (c.getPlaca().length() != 7) {
 			erros+="numeracao placa errada\n";
