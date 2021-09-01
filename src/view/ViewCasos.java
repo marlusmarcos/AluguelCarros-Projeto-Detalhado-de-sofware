@@ -31,14 +31,16 @@ public class ViewCasos {
 					produtoService.inserir(carro2, pgEstrategy);
 				}
 				public void buscarProduto( int id) {
-					System.out.println("aqui: " + produtoService.buscar(id).getModelo());
+					System.out.println("PRODUTO COM ID " + id +": " + produtoService.buscar(id).getModelo());
 				}
 				
 				
 				public void buscarTodos() {
+					System.out.println("Listando TODOS OS PRODUTOS: ");
 					for (Produto p : produtoService.buscarTodos()) {
 						System.out.println("classe: " + p.getModelo());
 					}
+					System.out.println("----------------------");
 				}
 				public void buscarProdTodos() {
 					for (Produto p : produtoService.buscarTodos()) {
@@ -56,7 +58,7 @@ public class ViewCasos {
 				Cliente cliente2 = new Cliente ();
 				cliente2.setCpf("01888093466");
 				cliente2.setEmail("marsadadadalus@gmail.com");
-				cliente2.setNome("Teste OK");
+				cliente2.setNome("Marlus Marcos Rodrigues");
 				cliente2.setCnh('B');
 				Cliente cliente3 = new Cliente ();
 				cliente3.setCpf("01634993466");
@@ -97,11 +99,15 @@ public class ViewCasos {
 				Alugar alugar = alugarService.buscar(1);
 				System.out.println("Cliente: " + alugar.getCliente().getNome() + "\nCarro: " + alugar.getProduto().getModelo());
 			}
+			public void devolucao () {
+				alugarService.devolucao(1, 2, alugarCarro, clienteDAO, "carrro ótimo");
+			}
 			
 			public void cadastrarCarro () throws ServicoException {
 				Carro carro = new Carro("", "kjh4561", "branco", 1,1,(float) 80.0);
 				//carroService.inserir(carro);
 				Carro carro2 = new Carro("GOL", "mxs4597", "preto", 1,1,(float) 80.0);
+				
 				//carroService.inserir(carro2);
 				//Carro out = carroService.buscarCarro(1);
 				//System.out.println("id:" + out.getId() +"\nModelo: " + out.getModelo());

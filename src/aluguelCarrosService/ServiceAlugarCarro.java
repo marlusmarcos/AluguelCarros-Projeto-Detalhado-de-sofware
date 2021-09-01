@@ -3,6 +3,7 @@ package aluguelCarrosService;
 import ServoceExceptioin.ServicoException;
 import aluguelCarrosDAO.AlugarContextDAO;
 import aluguelCarrosDAO.IAlugarDAO;
+import aluguelCarrosModels.Carro;
 import aluguelCarrosModels.Cliente;
 import aluguelCarrosModels.Produto;
 
@@ -14,7 +15,6 @@ public class ServiceAlugarCarro  implements ProdutoServiceStrategy{
 		Produto produto = produtoService.buscar(idProduto);
 		Cliente cliente = clienteService.buscarID(idCliente);
 		float preco = produto.getPreco()*qtdDias;
-		//fazer validações
 		try {
 			if (validar(cliente, produto)) {
 				produto.setStatus(0);
@@ -45,11 +45,16 @@ public class ServiceAlugarCarro  implements ProdutoServiceStrategy{
 		
 		
 	}
-	//@Override
-	//public void validar() {
-		// TODO Auto-generated method stub
+	@Override
+	public void devolucao(int idProduto, int idCliente, ContextProdutoService produtoService,
+			ClienteService clienteService, IAlugarDAO alugarContextDAO, String avaliacao) {
+		Carro produto = (Carro) produtoService.buscar(idProduto);
+		Cliente cliente = clienteService.buscarID(idCliente);
+		produto.setStatus(1);
+		produto.setComentario(idCliente, avaliacao);		
 		
-	//}
+	}
+	
 	
 
 

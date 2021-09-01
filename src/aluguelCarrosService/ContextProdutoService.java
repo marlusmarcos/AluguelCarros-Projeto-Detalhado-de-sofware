@@ -10,7 +10,7 @@ import aluguelCarrosDAO.ProdutoDAO;
 import aluguelCarrosModels.Produto;
 
 public class ContextProdutoService {
-	protected ICarroDAO carroDAO = new CarroDAO();
+	//protected ICarroDAO carroDAO = new CarroDAO();
 	protected ProdutoDAO produtoDAO = new ProdutoDAO();
 	ProdutoGerenciaStrategy produtoGerencia;
 	
@@ -24,6 +24,9 @@ public class ContextProdutoService {
 	}
 	public ArrayList<Produto> buscarTodos() {
 		return produtoDAO.buscarProdutos();
+	}
+	public void avaliar (Produto produto, ProdutoGerenciaStrategy produtoGerencia) {
+		produtoGerencia.alterar(produto);
 	}
 	
 }

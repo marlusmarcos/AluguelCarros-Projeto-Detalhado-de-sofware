@@ -4,6 +4,8 @@ package aluguelCarrosService;
 import aluguelCarrosDAO.AlugarContextDAO;
 import aluguelCarrosDAO.IAlugarDAO;
 import aluguelCarrosModels.Alugar;
+import aluguelCarrosModels.Carro;
+import aluguelCarrosModels.Cliente;
 
 public class AlugarProduto {
 	ContextProdutoService produtoService;
@@ -21,6 +23,11 @@ public class AlugarProduto {
 	public Alugar buscar (int id) {
 		return alugarContextDAO.buscar(id);
 	}
+	public void devolucao(int idProduto, int idCliente, ProdutoServiceStrategy prodServStrategy, ClienteService clienteService, String avaliacao) {
+		prodServStrategy.devolucao(idProduto, idCliente, produtoService, clienteService, alugarContextDAO, avaliacao);
+		
+	}
+	
 		
 
 }

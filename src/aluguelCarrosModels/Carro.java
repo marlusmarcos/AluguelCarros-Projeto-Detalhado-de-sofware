@@ -5,9 +5,9 @@ import java.util.HashMap;
 
 public class Carro extends Produto {
 	
-	protected HashMap<Integer, String> comentarios;	
+	protected HashMap<Integer, String> comentarios = new HashMap<Integer, String>();;	
 	public Carro() {
-		super();
+		comentarios = new HashMap<Integer, String>();
 	}
 	
 	public void setComentario (int id, String comentario) {
