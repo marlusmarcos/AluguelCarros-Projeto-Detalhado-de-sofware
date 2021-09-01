@@ -10,6 +10,8 @@ public interface ProdutoServiceStrategy {
 			 ClienteService clienteService, IAlugarDAO alugarContextDAO);
 	//void validar();
 	boolean validar(Cliente cliente, Produto carro) throws ServicoException;
+	public void devolucao(int idProduto, int idCliente, ContextProdutoService produtoService,
+			ClienteService clienteService, IAlugarDAO alugarContextDAO, String avaliacao);
 	
 	
 }

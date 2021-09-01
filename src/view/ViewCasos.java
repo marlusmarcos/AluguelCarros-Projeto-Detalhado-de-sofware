@@ -19,45 +19,68 @@ public class ViewCasos {
 				ClienteService clienteDAO = new ClienteService();
 				Cliente cliente = new Cliente ();
 				
+				//classe de serviço para gerenciamento de veículos
 				ContextProdutoService produtoService = new ContextProdutoService();
+				
+				//classe para gerenciameto de um carro (ponto variável)
 				ProdutoGerenciaStrategy pgEstrategy = new CarroService();
+				
+				//classe responsável por aluguel de veículo
 				AlugarProduto alugarService = new AlugarProduto(produtoService); 
+				
+				//classe resposável por alugar um carro/ variável.
 				ProdutoServiceStrategy alugarCarro = new ServiceAlugarCarro();
 
 				public void cadastraUmCarro() throws ServicoException {
+					System.out.println("-----------------------------------------------------------------");
+					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO CARRO\n->UNO E GOL");
 					Produto carro = new Carro("uno", "kjh4561", "branco", 1,1,(float) 80.0);
 					Produto carro2 = new Carro("GOL", "mxs4597", "preto", 1,1,(float) 80.0);
 					produtoService.inserir(carro, pgEstrategy);
 					produtoService.inserir(carro2, pgEstrategy);
+					System.out.println("-----------------------------------------------------------------");
 				}
 				public void buscarProduto( int id) {
-					System.out.println("aqui: " + produtoService.buscar(id).getModelo());
+					System.out.println("-------------------------------------------------------------------");
+					System.out.println("PRODUTO COM ID " + id +": " + produtoService.buscar(id).getModelo());
+					System.out.println("-------------------------------------------------------------------");
 				}
 				
 				
 				public void buscarTodos() {
+					System.out.println("-------------------------------------------------------------------");
+					System.out.println("Listando TODOS OS PRODUTOS: ");
 					for (Produto p : produtoService.buscarTodos()) {
 						System.out.println("classe: " + p.getModelo());
 					}
+					System.out.println("-------------------------------------------------------------------");
 				}
 				public void buscarProdTodos() {
+					System.out.println("-------------------------------------------------------------------");
+					System.out.println("BUSCANDO OS PRODUTOS DISPONÍVEIS");
 					for (Produto p : produtoService.buscarTodos()) {
 						if (p.getStatus() == 1)
-						System.out.println("classe: " + p.getModelo());
+						System.out.println("MODELO/TIPO: " + p.getModelo());
 					}
+					System.out.println("-------------------------------------------------------------------");
 				}
 				
 			public void cadastrarClientes() throws ServicoException {
+				System.out.println("-------------------------------------------------------------------");
+				System.out.println("Cadastrando cliente Marlus com categoria A");
+				System.out.println("-------------------------------------------------------------------");
 				cliente.setCpf("01825293466");
 				cliente.setEmail("marlus@gmail.com");
 				cliente.setNome("Marlus Marcos");
 				cliente.setTipo(1);
 				cliente.setCnh('A');
 				Cliente cliente2 = new Cliente ();
+				System.out.println("Cadastrando cliente Marlus Marcos Rodrigues com categoria B");
 				cliente2.setCpf("01888093466");
-				cliente2.setEmail("marsadadadalus@gmail.com");
-				cliente2.setNome("Teste OK");
+				cliente2.setEmail("marlus@gmail.com");
+				cliente2.setNome("Marlus Marcos Rodrigues");
 				cliente2.setCnh('B');
+				System.out.println("-------------------------------------------------------------------");
 				Cliente cliente3 = new Cliente ();
 				cliente3.setCpf("01634993466");
 				cliente3.setEmail("marlus@xxffgmail.com");
@@ -97,11 +120,15 @@ public class ViewCasos {
 				Alugar alugar = alugarService.buscar(1);
 				System.out.println("Cliente: " + alugar.getCliente().getNome() + "\nCarro: " + alugar.getProduto().getModelo());
 			}
+			public void devolucao () {
+				alugarService.devolucao(1, 2, alugarCarro, clienteDAO, "carrro ótimo");
+			}
 			
 			public void cadastrarCarro () throws ServicoException {
 				Carro carro = new Carro("", "kjh4561", "branco", 1,1,(float) 80.0);
 				//carroService.inserir(carro);
 				Carro carro2 = new Carro("GOL", "mxs4597", "preto", 1,1,(float) 80.0);
+				
 				//carroService.inserir(carro2);
 				//Carro out = carroService.buscarCarro(1);
 				//System.out.println("id:" + out.getId() +"\nModelo: " + out.getModelo());
