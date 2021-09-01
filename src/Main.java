@@ -11,18 +11,19 @@ import view.ViewCasos;
 public class Main {
 	
 	public static void main (String [] args) throws ServicoException {
-		Date date = new Date ();
+		//Date date = new Date ();
 		ViewCasos vw = new ViewCasos();
 		vw.buscarProdTodos();
 		vw.cadastrarClientes();
 		//vw.alterarCliente();
 		vw.cadastraUmCarro();
+		/*-----------------*/
 		vw.buscarProduto(1);
 		vw.buscarTodos();
 		vw.alugarUmProduto();
 		vw.buscarProdTodos();
 		vw.carrosAlugados();
-		System.out.println("CARROS DISPONÍVEIS");
+		System.out.println("\n-----fazendo devolução do carro:-------");
 		vw.devolucao();
 		vw.buscarProdTodos();
 		//vw.devolucao();
