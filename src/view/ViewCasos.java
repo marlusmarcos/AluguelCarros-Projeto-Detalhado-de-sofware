@@ -4,12 +4,13 @@ import ServoceExceptioin.ServicoException;
 import aluguelCarrosModels.Alugar;
 import aluguelCarrosModels.Carro;
 import aluguelCarrosModels.Cliente;
+import aluguelCarrosModels.Moto;
 import aluguelCarrosModels.Produto;
-import aluguelCarrosService.AlugarProduto;
 import aluguelCarrosService.AlugarProduto;
 import aluguelCarrosService.CarroService;
 import aluguelCarrosService.ClienteService;
 import aluguelCarrosService.ContextProdutoService;
+import aluguelCarrosService.MotoService;
 import aluguelCarrosService.ProdutoGerenciaStrategy;
 import aluguelCarrosService.ProdutoServiceStrategy;
 import aluguelCarrosService.ServiceAlugarCarro;
@@ -24,6 +25,7 @@ public class ViewCasos {
 				
 				//classe para gerenciameto de um carro (ponto variável)
 				ProdutoGerenciaStrategy pgEstrategy = new CarroService();
+				ProdutoGerenciaStrategy pgEstrategyMoto = new MotoService();
 				
 				//classe responsável por aluguel de veículo
 				AlugarProduto alugarService = new AlugarProduto(produtoService); 
@@ -40,6 +42,15 @@ public class ViewCasos {
 					produtoService.inserir(carro2, pgEstrategy);
 					System.out.println("-----------------------------------------------------------------");
 				}
+				public void cadastraUmaMoto() throws ServicoException {
+					System.out.println("-----------------------------------------------------------------");
+					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO moto\n->UNO E GOL");
+					Produto moto = new Moto("CB-500", "kjh4561", "azul", 1,1,(float) 80.0);
+					Produto moto2 = new Moto("XRE", "mxs4597", "preto", 1,1,(float) 80.0);
+					produtoService.inserir(moto, pgEstrategyMoto);
+					produtoService.inserir(moto2, pgEstrategyMoto);
+					System.out.println("-----------------------------------------------------------------");
+				}
 				public void buscarProduto( int id) {
 					System.out.println("-------------------------------------------------------------------");
 					System.out.println("PRODUTO COM ID " + id +": " + produtoService.buscar(id).getModelo());
@@ -51,7 +62,9 @@ public class ViewCasos {
 					System.out.println("-------------------------------------------------------------------");
 					System.out.println("Listando TODOS OS PRODUTOS: ");
 					for (Produto p : produtoService.buscarTodos()) {
-						System.out.println("classe: " + p.getModelo());
+						if (p instanceof Carro ){
+							System.out.println("classe: " + p.getModelo());
+						}
 					}
 					System.out.println("-------------------------------------------------------------------");
 				}
@@ -59,7 +72,7 @@ public class ViewCasos {
 					System.out.println("-------------------------------------------------------------------");
 					System.out.println("BUSCANDO OS PRODUTOS DISPONÍVEIS");
 					for (Produto p : produtoService.buscarTodos()) {
-						if (p.getStatus() == 1)
+						if (p.getStatus() == 1 && p instanceof Moto)
 						System.out.println("MODELO/TIPO: " + p.getModelo());
 					}
 					System.out.println("-------------------------------------------------------------------");
@@ -118,26 +131,14 @@ public class ViewCasos {
 			public void carrosAlugados() {
 				System.out.println("MOSTRANDO CARROS ALUGADOS: ");
 				Alugar alugar = alugarService.buscar(1);
+				//if (alugar.getCliente().getNome() )
 				System.out.println("Cliente: " + alugar.getCliente().getNome() + "\nCarro: " + alugar.getProduto().getModelo());
 			}
 			public void devolucao () {
 				alugarService.devolucao(1, 2, alugarCarro, clienteDAO, "carrro ótimo");
 			}
 			
-			public void cadastrarCarro () throws ServicoException {
-				Carro carro = new Carro("", "kjh4561", "branco", 1,1,(float) 80.0);
-				//carroService.inserir(carro);
-				Carro carro2 = new Carro("GOL", "mxs4597", "preto", 1,1,(float) 80.0);
-				
-				//carroService.inserir(carro2);
-				//Carro out = carroService.buscarCarro(1);
-				//System.out.println("id:" + out.getId() +"\nModelo: " + out.getModelo());
-				//out.setModelo("CERATO");
-				//carroService.alterar(1, out);
-				Carro out2 = new Carro();
-				//out2 = carroService.buscarCarro(1);
-				System.out.println("id:" + out2.getId() +"\nModelo: " + out2.getModelo());
-			}
+		
 			public void carrosDisponiveis () {
 				System.out.println("Carros disponiveis");
 				
