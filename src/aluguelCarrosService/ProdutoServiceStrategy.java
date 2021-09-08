@@ -8,10 +8,9 @@ import aluguelCarrosModels.Produto;
 public interface ProdutoServiceStrategy {
 	void alugar (int idProduto, int idCliente, int qtdDias,	ContextProdutoService produtoService, 
 			 ClienteService clienteService, IAlugarDAO alugarContextDAO);
-	//void validar();
-	boolean validar(Cliente cliente, Produto carro) throws ServicoException;
-	public void devolucao(int idProduto, int idCliente, ContextProdutoService produtoService,
-			ClienteService clienteService, IAlugarDAO alugarContextDAO, String avaliacao);
+	boolean validar(Cliente cliente, Produto produto) throws ServicoException;
+	public void devolucao(int idProduto, int idCliente, ContextProdutoService produtoService, ClienteService clienteService, IAlugarDAO alugarContextDAO, 
+			String avaliacao);
 	
 	
 }

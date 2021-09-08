@@ -17,7 +17,6 @@ public class ContextProdutoService {
 
 	public void inserir (Produto produto, ProdutoGerenciaStrategy produtoGerencia) throws ServicoException  {
 		produtoGerencia.inserir(produto, this.produtoDAO);
-		
 	}
 	public Produto buscar(int id) {
 		return this.produtoDAO.buscar(id);
@@ -25,8 +24,6 @@ public class ContextProdutoService {
 	public ArrayList<Produto> buscarTodos() {
 		return produtoDAO.buscarProdutos();
 	}
-	public void avaliar (Produto produto, ProdutoGerenciaStrategy produtoGerencia) {
-		produtoGerencia.alterar(produto);
-	}
+
 	
 }

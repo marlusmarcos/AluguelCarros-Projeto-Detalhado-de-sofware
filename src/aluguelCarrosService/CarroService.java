@@ -12,24 +12,21 @@ public class CarroService implements ProdutoGerenciaStrategy{
 	//protected ICarroDAO carroDAO = new CarroDAO();
 	protected ProdutoDAO produtoDAO;
 
-
 	public CarroService() {
 		super();
 
 	}
-
+	
 	@Override
 	public void inserir(Produto produto, IProdutoDAO produtoDAO) throws ServicoException {
 		verificarCarro((Carro) produto);
 		produtoDAO.inserir(produto);
 		
-		
 	}
-	
 	
 	@Override
 	public void alterar(Produto produto) {
-		// TODO Auto-generated method stub
+		// TODO 
 		
 	}
 	public int verificarCarro (Carro c) throws ServicoException {

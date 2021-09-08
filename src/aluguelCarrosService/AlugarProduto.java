@@ -9,7 +9,7 @@ import aluguelCarrosModels.Cliente;
 
 public class AlugarProduto {
 	ContextProdutoService produtoService;
-	ProdutoServiceStrategy p;
+	//ProdutoServiceStrategy p;
 	protected IAlugarDAO alugarContextDAO = new AlugarContextDAO();
 
 	public AlugarProduto(ContextProdutoService produtoService) {
