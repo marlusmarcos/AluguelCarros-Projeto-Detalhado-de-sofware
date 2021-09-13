@@ -18,6 +18,7 @@ public class Main {
 		//vw.alterarCliente();
 		vw.cadastraUmCarro();
 		vw.cadastraUmaMoto();
+		vw.cadastraUmaBicicleta();
 		/*-----------------*/
 		vw.buscarProduto(1);
 		vw.buscarTodos();
