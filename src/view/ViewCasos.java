@@ -9,11 +9,12 @@ import aluguelCarrosModels.Produto;
 import aluguelCarrosService.AlugarProduto;
 import aluguelCarrosService.CarroService;
 import aluguelCarrosService.ClienteService;
-import aluguelCarrosService.ContextProdutoService;
 import aluguelCarrosService.MotoService;
 import aluguelCarrosService.ProdutoGerenciaStrategy;
+import aluguelCarrosService.ProdutoService;
 import aluguelCarrosService.ProdutoServiceStrategy;
 import aluguelCarrosService.ServiceAlugarCarro;
+import aluguelCarrosService.ServiceAlugarMoto;
 
 public class ViewCasos {
 
@@ -21,7 +22,7 @@ public class ViewCasos {
 				Cliente cliente = new Cliente ();
 				
 				//classe de serviço para gerenciamento de veículos
-				ContextProdutoService produtoService = new ContextProdutoService();
+				ProdutoService produtoService = new ProdutoService();
 				
 				//classe para gerenciameto de um carro (ponto variável)
 				ProdutoGerenciaStrategy pgEstrategy = new CarroService();
@@ -32,6 +33,7 @@ public class ViewCasos {
 				
 				//classe resposável por alugar um carro/ variável.
 				ProdutoServiceStrategy alugarCarro = new ServiceAlugarCarro();
+				ProdutoServiceStrategy alugarMoto = new ServiceAlugarMoto();
 
 				public void cadastraUmCarro() throws ServicoException {
 					System.out.println("-----------------------------------------------------------------");
@@ -127,9 +129,23 @@ public class ViewCasos {
 				System.out.println("=******* ALUGANDO UM CARRO QUE JÁ FOI ALUGADO *******=");
 				alugarService.alugarProduto(1, 3, 2, alugarCarro, clienteDAO);
 			}
+			public void alugarUmProdutoMoto() {
+				System.out.println("=******* ALUGANDO UMA MOTO COM CATEROGIA DIFERENTE *******=");
+				alugarService.alugarProduto(1, 1, 2, alugarMoto, clienteDAO);
+				System.out.println("=******* ALUGANDO UMA MOTO COM CATEROGIA CORRETA *******=");
+				alugarService.alugarProduto(1, 2, 2, alugarMoto, clienteDAO);
+				System.out.println("=******* ALUGANDO UMA MOTO QUE JÁ FOI ALUGADA *******=");
+				alugarService.alugarProduto(1, 3, 2, alugarMoto, clienteDAO);
+			}
 			
 			public void carrosAlugados() {
 				System.out.println("MOSTRANDO CARROS ALUGADOS: ");
+				Alugar alugar = alugarService.buscar(1);
+				//if (alugar.getCliente().getNome() )
+				System.out.println("Cliente: " + alugar.getCliente().getNome() + "\nCarro: " + alugar.getProduto().getModelo());
+			}
+			public void MotosAlugados() {
+				System.out.println("MOSTRANDO motos ALUGADAS: ");
 				Alugar alugar = alugarService.buscar(1);
 				//if (alugar.getCliente().getNome() )
 				System.out.println("Cliente: " + alugar.getCliente().getNome() + "\nCarro: " + alugar.getProduto().getModelo());

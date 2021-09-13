@@ -14,7 +14,7 @@ public class ServiceAlugarMoto implements ProdutoServiceStrategy{
 
 AlugarContextDAO al = new AlugarContextDAO();
 	@Override
-	public void alugar(int idProduto, int idCliente, int qtdDias, ContextProdutoService produtoService,
+	public void alugar(int idProduto, int idCliente, int qtdDias, ProdutoService produtoService,
 			ClienteService clienteService, IAlugarDAO alugarContextDAO) {
 		Produto produto = produtoService.buscar(idProduto);
 		Cliente cliente = clienteService.buscarID(idCliente);
@@ -47,7 +47,7 @@ AlugarContextDAO al = new AlugarContextDAO();
 		return true;
 	}
 	@Override
-	public void devolucao(int idProduto, int idCliente, ContextProdutoService produtoService,
+	public void devolucao(int idProduto, int idCliente, ProdutoService produtoService,
 			ClienteService clienteService, IAlugarDAO alugarContextDAO, String avaliacao) {
 		// TODO Auto-generated method stub
 		

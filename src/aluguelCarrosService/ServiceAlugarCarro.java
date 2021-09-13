@@ -10,7 +10,7 @@ import aluguelCarrosModels.Produto;
 public class ServiceAlugarCarro  implements ProdutoServiceStrategy{
 	AlugarContextDAO al = new AlugarContextDAO();
 	@Override
-	public void alugar(int idProduto, int idCliente, int qtdDias, ContextProdutoService produtoService,
+	public void alugar(int idProduto, int idCliente, int qtdDias, ProdutoService produtoService,
 		ClienteService clienteService, IAlugarDAO alugarContextDAO) {
 		Produto produto = produtoService.buscar(idProduto);
 		Cliente cliente = clienteService.buscarID(idCliente);
@@ -46,7 +46,7 @@ public class ServiceAlugarCarro  implements ProdutoServiceStrategy{
 		
 	}
 	@Override
-	public void devolucao(int idProduto, int idCliente, ContextProdutoService produtoService,
+	public void devolucao(int idProduto, int idCliente, ProdutoService produtoService,
 			ClienteService clienteService, IAlugarDAO alugarContextDAO, String avaliacao) {
 		Carro produto = (Carro) produtoService.buscar(idProduto);
 		Cliente cliente = clienteService.buscarID(idCliente);

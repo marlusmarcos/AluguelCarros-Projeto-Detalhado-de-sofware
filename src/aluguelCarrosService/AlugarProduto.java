@@ -4,15 +4,13 @@ package aluguelCarrosService;
 import aluguelCarrosDAO.AlugarContextDAO;
 import aluguelCarrosDAO.IAlugarDAO;
 import aluguelCarrosModels.Alugar;
-import aluguelCarrosModels.Carro;
-import aluguelCarrosModels.Cliente;
 
 public class AlugarProduto {
-	ContextProdutoService produtoService;
+	ProdutoService produtoService;
 	//ProdutoServiceStrategy p;
 	protected IAlugarDAO alugarContextDAO = new AlugarContextDAO();
 
-	public AlugarProduto(ContextProdutoService produtoService) {
+	public AlugarProduto(ProdutoService produtoService) {
 		super();
 		this.produtoService = produtoService;
 	}
