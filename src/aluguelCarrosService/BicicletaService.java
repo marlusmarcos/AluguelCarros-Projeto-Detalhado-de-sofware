@@ -1,4 +1,3 @@
-/*
 package aluguelCarrosService;
 
 import java.util.ArrayList;
@@ -10,26 +9,53 @@ import aluguelCarrosDAO.ProdutoDAO;
 import aluguelCarrosModels.Bicicleta;
 
 
-public class BicicletaService {
-	protected ProdutoDAO bicicletaDAO = new ProdutoDAO();
-	ProdutoGerenciaStrategy pro;
-	public void inserirBicileta (Produto bicicleta) throws ServicoException  {
-		verificarBicicleta(bicicleta);
-		bicicletaDAO.inserir(bicicleta);
+public class BicicletaService implements ProdutoGerenciaStrategy{
+	
+	protected ProdutoDAO produtoDAO;
+
+	public BicicletaService() {
+		super();
+
 	}
-	public void remover (int id) {
+	
+	@Override
+	public void inserir(Produto produto, IProdutoDAO produtoDAO) throws ServicoException {
+		verificarBicicleta((Bicicleta) produto);
+		produtoDAO.inserir(produto);
 		
 	}
-	public void alterar (int id, Produto bicicleta) throws ServicoException {
-		verificarBicicleta(bicicleta);
-		if (bicicletaDAO.buscar(id) == null) {
-			throw new ServicoException("Carro com id passado n√£o existe!\n");
-		} 
-		this.bicicletaDAO.alterar(id, bicicleta);
-	}
-
 	
-	public int verificarBicicleta (Bicicleta c) throws ServicoException {
+	@Override
+	public void alterar(Produto produto) {
+		// 
+		
+	}
+	
+	public int verificarBicicleta (Bicicleta b) throws ServicoException  {
+		String erros = "";
+		if (b == null) {
+			erros += "Bicicleta nula!\n";
+		}else {
+			if (b.getDono() != 1 && b.getDono() != 2) {
+				erros+="O dono deve ser 1 ou 2!\n";
+			}
+			if (b.getModelo() == "" || b.getModelo() == null) {
+				erros += "O modelo est· vazio!\n";
+			}
+			if (b.getCor() == "" || b.getCor() == null) {
+				erros += "A cor est· vazia!\n";
+			}
+			if (b.getPreco() < 0) {
+				erros += "O preÁo inserido È inv·lido!\n";
+			}
+		}
+		if (erros.length() > 0) {
+			throw new ServicoException(erros);
+		}
+		return 1;
+	}
+	
+	/*public int verificarBicicleta (Bicicleta c) throws ServicoException {
 		String erros = "";
 		if (c == null) {
 			erros += "Cliente nulo\n";
@@ -44,7 +70,6 @@ public class BicicletaService {
 			throw new ServicoException(erros);
 		}
 		return 1;
-	}
+	}/*
 
 }
-*/

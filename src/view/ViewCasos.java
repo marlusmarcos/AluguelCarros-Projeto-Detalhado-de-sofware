@@ -2,15 +2,17 @@ package view;
 
 import ServoceExceptioin.ServicoException;
 import aluguelCarrosModels.Alugar;
-import aluguelCarrosModels.Carro;
 import aluguelCarrosModels.Cliente;
+import aluguelCarrosModels.Carro;
 import aluguelCarrosModels.Moto;
+import aluguelCarrosModels.Bicicleta;
 import aluguelCarrosModels.Produto;
 import aluguelCarrosService.AlugarProduto;
 import aluguelCarrosService.CarroService;
+import aluguelCarrosService.MotoService;
+import aluguelCarrosService.BicicletaService;
 import aluguelCarrosService.ClienteService;
 import aluguelCarrosService.ContextProdutoService;
-import aluguelCarrosService.MotoService;
 import aluguelCarrosService.ProdutoGerenciaStrategy;
 import aluguelCarrosService.ProdutoServiceStrategy;
 import aluguelCarrosService.ServiceAlugarCarro;
@@ -20,22 +22,23 @@ public class ViewCasos {
 				ClienteService clienteDAO = new ClienteService();
 				Cliente cliente = new Cliente ();
 				
-				//classe de serviço para gerenciamento de veículos
+				//classe de serviÃ§o para gerenciamento de veÃ­culos
 				ContextProdutoService produtoService = new ContextProdutoService();
 				
-				//classe para gerenciameto de um carro (ponto variável)
+				//classe para gerenciameto de um carro (ponto variÃ¡vel)
 				ProdutoGerenciaStrategy pgEstrategy = new CarroService();
 				ProdutoGerenciaStrategy pgEstrategyMoto = new MotoService();
+				ProdutoGerenciaStrategy pgEstrategyBicicleta = new BicicletaService();
 				
-				//classe responsável por aluguel de veículo
+				//classe responsavel pelo aluguel de veículo
 				AlugarProduto alugarService = new AlugarProduto(produtoService); 
 				
-				//classe resposável por alugar um carro/ variável.
+				//classe resposÃ¡vel por alugar um carro/ variÃ¡vel.
 				ProdutoServiceStrategy alugarCarro = new ServiceAlugarCarro();
 
 				public void cadastraUmCarro() throws ServicoException {
 					System.out.println("-----------------------------------------------------------------");
-					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO CARRO\n->UNO E GOL");
+					System.out.println("CRIANDO E ADICIONANDO DOIS VEÃ�CULOS DO TIPO CARRO\n->UNO E GOL");
 					Produto carro = new Carro("uno", "kjh4561", "branco", 1,1,(float) 80.0);
 					Produto carro2 = new Carro("GOL", "mxs4597", "preto", 1,1,(float) 80.0);
 					produtoService.inserir(carro, pgEstrategy);
@@ -44,7 +47,7 @@ public class ViewCasos {
 				}
 				public void cadastraUmaMoto() throws ServicoException {
 					System.out.println("-----------------------------------------------------------------");
-					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO moto\n->UNO E GOL");
+					System.out.println("CRIANDO E ADICIONANDO DOIS VEÃ�CULOS DO TIPO moto\n->UNO E GOL");
 					Produto moto = new Moto("CB-500", "kjh4561", "azul", 1,1,(float) 80.0);
 					Produto moto2 = new Moto("XRE", "mxs4597", "preto", 1,1,(float) 80.0);
 					produtoService.inserir(moto, pgEstrategyMoto);
@@ -70,7 +73,7 @@ public class ViewCasos {
 				}
 				public void buscarProdTodos() {
 					System.out.println("-------------------------------------------------------------------");
-					System.out.println("BUSCANDO OS PRODUTOS DISPONÍVEIS");
+					System.out.println("BUSCANDO OS PRODUTOS DISPONÃ�VEIS");
 					for (Produto p : produtoService.buscarTodos()) {
 						if (p.getStatus() == 1 && p instanceof Moto)
 						System.out.println("MODELO/TIPO: " + p.getModelo());
@@ -124,7 +127,7 @@ public class ViewCasos {
 				alugarService.alugarProduto(1, 1, 2, alugarCarro, clienteDAO);
 				System.out.println("=******* ALUGANDO UM CARRO COM CATEROGIA CORRETA *******=");
 				alugarService.alugarProduto(1, 2, 2, alugarCarro, clienteDAO);
-				System.out.println("=******* ALUGANDO UM CARRO QUE JÁ FOI ALUGADO *******=");
+				System.out.println("=******* ALUGANDO UM CARRO QUE JÃ� FOI ALUGADO *******=");
 				alugarService.alugarProduto(1, 3, 2, alugarCarro, clienteDAO);
 			}
 			
@@ -135,7 +138,7 @@ public class ViewCasos {
 				System.out.println("Cliente: " + alugar.getCliente().getNome() + "\nCarro: " + alugar.getProduto().getModelo());
 			}
 			public void devolucao () {
-				alugarService.devolucao(1, 2, alugarCarro, clienteDAO, "carrro ótimo");
+				alugarService.devolucao(1, 2, alugarCarro, clienteDAO, "carrro Ã³timo");
 			}
 			
 		
@@ -176,7 +179,7 @@ public class ViewCasos {
 				}
 			}
 			public void informar () {
-				System.out.println("Informação dos clientes");
+				System.out.println("InformaÃ§Ã£o dos clientes");
 				for (Alugar car : alugar.todosAlugados()) {
 					System.out.println("Carro: " + car.getCarro().getModelo() + " | Cliente: "+ car.getCliente().getNome()+ " | preco: "+ car.getPreco());
 					System.out.println("-----------------------------");
