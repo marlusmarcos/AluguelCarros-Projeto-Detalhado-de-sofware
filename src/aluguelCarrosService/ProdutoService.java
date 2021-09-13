@@ -9,7 +9,7 @@ import aluguelCarrosDAO.IProdutoDAO;
 import aluguelCarrosDAO.ProdutoDAO;
 import aluguelCarrosModels.Produto;
 
-public class ContextProdutoService {
+public class ProdutoService {
 	//protected ICarroDAO carroDAO = new CarroDAO();
 	protected ProdutoDAO produtoDAO = new ProdutoDAO();
 	ProdutoGerenciaStrategy produtoGerencia;

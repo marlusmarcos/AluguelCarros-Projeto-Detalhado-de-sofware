@@ -12,18 +12,26 @@ import aluguelCarrosService.CarroService;
 import aluguelCarrosService.MotoService;
 import aluguelCarrosService.BicicletaService;
 import aluguelCarrosService.ClienteService;
-import aluguelCarrosService.ContextProdutoService;
+
+
+
+import aluguelCarrosService.MotoService;
+import aluguelCarrosService.ProdutoAlugarStrategy;
+
 import aluguelCarrosService.ProdutoGerenciaStrategy;
-import aluguelCarrosService.ProdutoServiceStrategy;
+import aluguelCarrosService.ProdutoService;
 import aluguelCarrosService.ServiceAlugarCarro;
+import aluguelCarrosService.ServiceAlugarMoto;
 
 public class ViewCasos {
 
 				ClienteService clienteDAO = new ClienteService();
 				Cliente cliente = new Cliente ();
 				
-				//classe de serviÃ§o para gerenciamento de veÃ­culos
-				ContextProdutoService produtoService = new ContextProdutoService();
+
+				//classe de serviço para gerenciamento de veículos
+				ProdutoService produtoService = new ProdutoService();
+
 				
 				//classe para gerenciameto de um carro (ponto variÃ¡vel)
 				ProdutoGerenciaStrategy pgEstrategy = new CarroService();
@@ -33,8 +41,10 @@ public class ViewCasos {
 				//classe responsavel pelo aluguel de veículo
 				AlugarProduto alugarService = new AlugarProduto(produtoService); 
 				
-				//classe resposÃ¡vel por alugar um carro/ variÃ¡vel.
-				ProdutoServiceStrategy alugarCarro = new ServiceAlugarCarro();
+
+				//classe resposável por alugar um carro/ variável.
+				ProdutoAlugarStrategy alugarCarro = new ServiceAlugarCarro();
+				ProdutoAlugarStrategy alugarMoto = new ServiceAlugarMoto();
 
 				public void cadastraUmCarro() throws ServicoException {
 					System.out.println("-----------------------------------------------------------------");
@@ -47,7 +57,9 @@ public class ViewCasos {
 				}
 				public void cadastraUmaMoto() throws ServicoException {
 					System.out.println("-----------------------------------------------------------------");
-					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO MOTO \n->CB-500 E XRE");
+
+					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO moto\n- CB 500 E XRE");
+
 					Produto moto = new Moto("CB-500", "kjh4561", "azul", 1,1,(float) 80.0);
 					Produto moto2 = new Moto("XRE", "mxs4597", "preto", 1,1,(float) 80.0);
 					produtoService.inserir(moto, pgEstrategyMoto);
@@ -139,9 +151,23 @@ public class ViewCasos {
 				System.out.println("=******* ALUGANDO UM CARRO QUE JÃ� FOI ALUGADO *******=");
 				alugarService.alugarProduto(1, 3, 2, alugarCarro, clienteDAO);
 			}
+			public void alugarUmProdutoMoto() {
+				System.out.println("=******* ALUGANDO UMA MOTO COM CATEROGIA DIFERENTE *******=");
+				alugarService.alugarProduto(1, 1, 2, alugarMoto, clienteDAO);
+				System.out.println("=******* ALUGANDO UMA MOTO COM CATEROGIA CORRETA *******=");
+				alugarService.alugarProduto(1, 2, 2, alugarMoto, clienteDAO);
+				System.out.println("=******* ALUGANDO UMA MOTO QUE JÁ FOI ALUGADA *******=");
+				alugarService.alugarProduto(1, 3, 2, alugarMoto, clienteDAO);
+			}
 			
 			public void carrosAlugados() {
 				System.out.println("MOSTRANDO CARROS ALUGADOS: ");
+				Alugar alugar = alugarService.buscar(1);
+				//if (alugar.getCliente().getNome() )
+				System.out.println("Cliente: " + alugar.getCliente().getNome() + "\nCarro: " + alugar.getProduto().getModelo());
+			}
+			public void MotosAlugados() {
+				System.out.println("MOSTRANDO motos ALUGADAS: ");
 				Alugar alugar = alugarService.buscar(1);
 				//if (alugar.getCliente().getNome() )
 				System.out.println("Cliente: " + alugar.getCliente().getNome() + "\nCarro: " + alugar.getProduto().getModelo());
