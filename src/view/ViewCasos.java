@@ -10,9 +10,9 @@ import aluguelCarrosService.AlugarProduto;
 import aluguelCarrosService.CarroService;
 import aluguelCarrosService.ClienteService;
 import aluguelCarrosService.MotoService;
+import aluguelCarrosService.ProdutoAlugarStrategy;
 import aluguelCarrosService.ProdutoGerenciaStrategy;
 import aluguelCarrosService.ProdutoService;
-import aluguelCarrosService.ProdutoServiceStrategy;
 import aluguelCarrosService.ServiceAlugarCarro;
 import aluguelCarrosService.ServiceAlugarMoto;
 
@@ -32,8 +32,8 @@ public class ViewCasos {
 				AlugarProduto alugarService = new AlugarProduto(produtoService); 
 				
 				//classe resposável por alugar um carro/ variável.
-				ProdutoServiceStrategy alugarCarro = new ServiceAlugarCarro();
-				ProdutoServiceStrategy alugarMoto = new ServiceAlugarMoto();
+				ProdutoAlugarStrategy alugarCarro = new ServiceAlugarCarro();
+				ProdutoAlugarStrategy alugarMoto = new ServiceAlugarMoto();
 
 				public void cadastraUmCarro() throws ServicoException {
 					System.out.println("-----------------------------------------------------------------");
@@ -46,7 +46,7 @@ public class ViewCasos {
 				}
 				public void cadastraUmaMoto() throws ServicoException {
 					System.out.println("-----------------------------------------------------------------");
-					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO moto\n->UNO E GOL");
+					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO moto\n- CB 500 E XRE");
 					Produto moto = new Moto("CB-500", "kjh4561", "azul", 1,1,(float) 80.0);
 					Produto moto2 = new Moto("XRE", "mxs4597", "preto", 1,1,(float) 80.0);
 					produtoService.inserir(moto, pgEstrategyMoto);

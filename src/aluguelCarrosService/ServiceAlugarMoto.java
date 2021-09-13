@@ -10,7 +10,7 @@ import aluguelCarrosModels.Produto;
 
 //package aluguelCarrosService;
 
-public class ServiceAlugarMoto implements ProdutoServiceStrategy{
+public class ServiceAlugarMoto implements ProdutoAlugarStrategy{
 
 AlugarContextDAO al = new AlugarContextDAO();
 	@Override
