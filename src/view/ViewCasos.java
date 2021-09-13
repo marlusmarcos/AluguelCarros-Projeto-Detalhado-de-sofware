@@ -38,7 +38,7 @@ public class ViewCasos {
 
 				public void cadastraUmCarro() throws ServicoException {
 					System.out.println("-----------------------------------------------------------------");
-					System.out.println("CRIANDO E ADICIONANDO DOIS VEÃ�CULOS DO TIPO CARRO\n->UNO E GOL");
+					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO CARRO\n->UNO E GOL");
 					Produto carro = new Carro("uno", "kjh4561", "branco", 1,1,(float) 80.0);
 					Produto carro2 = new Carro("GOL", "mxs4597", "preto", 1,1,(float) 80.0);
 					produtoService.inserir(carro, pgEstrategy);
@@ -47,11 +47,20 @@ public class ViewCasos {
 				}
 				public void cadastraUmaMoto() throws ServicoException {
 					System.out.println("-----------------------------------------------------------------");
-					System.out.println("CRIANDO E ADICIONANDO DOIS VEÃ�CULOS DO TIPO moto\n->UNO E GOL");
+					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO moto\n->CB-500 E XRE");
 					Produto moto = new Moto("CB-500", "kjh4561", "azul", 1,1,(float) 80.0);
 					Produto moto2 = new Moto("XRE", "mxs4597", "preto", 1,1,(float) 80.0);
 					produtoService.inserir(moto, pgEstrategyMoto);
 					produtoService.inserir(moto2, pgEstrategyMoto);
+					System.out.println("-----------------------------------------------------------------");
+				}
+				public void cadastraUmaBicicleta() throws ServicoException {
+					System.out.println("-----------------------------------------------------------------");
+					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO bicicleta\n->MONARK E CALOI");
+					Produto bicicleta = new Bicicleta("MONARK", "vermelha", 1, 1, (float) 50.0);
+					Produto bicicleta2 = new Bicicleta("CALOI", "branca", 1, 1, (float) 75.0);
+					produtoService.inserir(bicicleta, pgEstrategyBicicleta);
+					produtoService.inserir(bicicleta2, pgEstrategyBicicleta);
 					System.out.println("-----------------------------------------------------------------");
 				}
 				public void buscarProduto( int id) {
