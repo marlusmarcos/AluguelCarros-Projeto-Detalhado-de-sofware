@@ -7,7 +7,7 @@ import aluguelCarrosModels.Carro;
 import aluguelCarrosModels.Cliente;
 import aluguelCarrosModels.Produto;
 
-public class ServiceAlugarCarro  implements ProdutoServiceStrategy{
+public class ServiceAlugarCarro  implements ProdutoAlugarStrategy{
 	AlugarContextDAO al = new AlugarContextDAO();
 	@Override
 	public void alugar(int idProduto, int idCliente, int qtdDias, ProdutoService produtoService,
