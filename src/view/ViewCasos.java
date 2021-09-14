@@ -69,8 +69,8 @@ public class ViewCasos {
 				public void cadastraUmaBicicleta() throws ServicoException {
 					System.out.println("-----------------------------------------------------------------");
 					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO BICICLETA \n->MONARK E CALOI");
-					Produto bicicleta = new Bicicleta("MONARK", "vermelha", 1, 1, (float) 50.0);
-					Produto bicicleta2 = new Bicicleta("CALOI", "branca", 1, 1, (float) 75.0);
+					Produto bicicleta = new Bicicleta("MONARK", "vermelha", 1, 1, (float) 8.50);
+					Produto bicicleta2 = new Bicicleta("CALOI", "branca", 1, 1, (float) 11.0);
 					produtoService.inserir(bicicleta, pgEstrategyBicicleta);
 					produtoService.inserir(bicicleta2, pgEstrategyBicicleta);
 					System.out.println("-----------------------------------------------------------------");
@@ -130,6 +130,12 @@ public class ViewCasos {
 				clienteDAO.insert(cliente);
 				clienteDAO.insert(cliente2);
 				clienteDAO.insert(cliente3);
+				
+				Cliente cliente4 = new Cliente ();
+				cliente4.setCpf("01825093455");
+				cliente4.setNome("Neymar");
+				cliente4.setIdade(17);
+				clienteDAO.insert(cliente4);
 			}
 			public void listandoTodosClientes() {
 				for (Cliente c: clienteDAO.buscarClientes()) {
@@ -170,7 +176,7 @@ public class ViewCasos {
 			}
 			public void alugarUmProdutoBicicleta() {
 				System.out.println("=******* ALUGANDO UMA BICICLETA *******=");
-				alugarService.alugarProduto(5, 2, 2, alugarBicicleta, clienteDAO);
+				alugarService.alugarProduto(5, 4, 2, alugarBicicleta, clienteDAO);
 				System.out.println("=******* ALUGANDO UMA BICICLETA QUE ESTÁ ALUGADA *******=");
 				alugarService.alugarProduto(5, 3, 2, alugarBicicleta, clienteDAO);
 			}
