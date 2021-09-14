@@ -16,9 +16,9 @@ public class ServiceAlugarCarro  implements ProdutoAlugarStrategy{
 		Cliente cliente = clienteService.buscarID(idCliente);
 		float preco = produto.getPreco()*qtdDias;
 		try {
-			if (validar(cliente, produto)) {
+			if (validar(cliente, produto) == true) {
 				produto.setStatus(0);
-				System.out.println("CARRO ALUGADO COM SUCESSO!\n>>>> cliente: " + cliente.getNome() + "\n>>>> Carro: " + produto.getModelo());
+				System.out.println("CARRO ALUGADO COM SUCESSO!\n>>>> cliente: " + cliente.getNome() + " >> cnh " + cliente.getCnh() +"\n>>>> Carro: " + produto.getModelo());
 				alugarContextDAO.inserir(produto, cliente, preco);
 			}
 		} catch (ServicoException e) {

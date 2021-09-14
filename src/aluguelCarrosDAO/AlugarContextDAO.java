@@ -39,4 +39,7 @@ public class AlugarContextDAO implements IAlugarDAO{
 	public Alugar buscar (int id) {
 		return alugados.get(id-1);
 	}
+	public ArrayList<Alugar> buscarProdutos() {
+		return this.alugados;
+	}
 }
