@@ -5,6 +5,13 @@ public class Cliente {
 	protected String cpf;
 	protected String nome;
 	protected String email;
+	protected int idade;
+	public int getIdade() {
+		return idade;
+	}
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
 	protected int tipo;
 	protected char cnh;
 	

@@ -7,7 +7,7 @@ import aluguelCarrosDAO.IClienteDAO;
 import aluguelCarrosModels.Cliente;
 
 public class ClienteService {
-	protected IClienteDAO clienteDAO = new ClienteDAO();
+	protected ClienteDAO clienteDAO = new ClienteDAO();
 	
 	
 /*	public ClienteService () {}

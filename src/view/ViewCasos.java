@@ -1,64 +1,130 @@
 package view;
 
 import ServoceExceptioin.ServicoException;
-import aluguelCarrosModels.Carro;
+import aluguelCarrosModels.Alugar;
 import aluguelCarrosModels.Cliente;
+import aluguelCarrosModels.Carro;
 import aluguelCarrosModels.Moto;
+import aluguelCarrosModels.Bicicleta;
 import aluguelCarrosModels.Produto;
+import aluguelCarrosService.AlugarProduto;
 import aluguelCarrosService.CarroService;
+import aluguelCarrosService.MotoService;
+import aluguelCarrosService.BicicletaService;
 import aluguelCarrosService.ClienteService;
-import aluguelCarrosService.ContextProdutoService;
+
+
+
+import aluguelCarrosService.MotoService;
+import aluguelCarrosService.ProdutoAlugarStrategy;
+
 import aluguelCarrosService.ProdutoGerenciaStrategy;
+import aluguelCarrosService.ProdutoService;
+import aluguelCarrosService.ServiceAlugarCarro;
+import aluguelCarrosService.ServiceAlugarMoto;
 
 public class ViewCasos {
-	//IClien	teDAO clienteDAO = new ClienteDAO();
-				ClienteService clienteDAO = new ClienteService();
-				//CarroService carroService = new CarroService();
-				//AlugarService alugar = new AlugarService (carroService, clienteDAO);
-				//IAlugarProdService alugarProdService = new AlugarProdutoContext();
-				Cliente cliente = new Cliente ();
 
-				//ProdutoServiceStrategy produtoCarro = new ServiceAlugarCarro();
-				ContextProdutoService produtoService = new ContextProdutoService();
+				ClienteService clienteDAO = new ClienteService();
+				Cliente cliente = new Cliente ();
+				
+
+				//classe de serviço para gerenciamento de veículos
+				ProdutoService produtoService = new ProdutoService();
+
+				
+				//classe para gerenciameto de um carro (ponto variÃ¡vel)
 				ProdutoGerenciaStrategy pgEstrategy = new CarroService();
+				ProdutoGerenciaStrategy pgEstrategyMoto = new MotoService();
+				ProdutoGerenciaStrategy pgEstrategyBicicleta = new BicicletaService();
 				
+				//classe responsavel pelo aluguel de veículo
+				AlugarProduto alugarService = new AlugarProduto(produtoService); 
 				
+
+				//classe resposável por alugar um carro/ variável.
+				ProdutoAlugarStrategy alugarCarro = new ServiceAlugarCarro();
+				ProdutoAlugarStrategy alugarMoto = new ServiceAlugarMoto();
+
 				public void cadastraUmCarro() throws ServicoException {
-					
+					System.out.println("-----------------------------------------------------------------");
+					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO CARRO \n->UNO E GOL");
 					Produto carro = new Carro("uno", "kjh4561", "branco", 1,1,(float) 80.0);
 					Produto carro2 = new Carro("GOL", "mxs4597", "preto", 1,1,(float) 80.0);
 					produtoService.inserir(carro, pgEstrategy);
-					
-					
+					produtoService.inserir(carro2, pgEstrategy);
+					System.out.println("-----------------------------------------------------------------");
+				}
+				public void cadastraUmaMoto() throws ServicoException {
+					System.out.println("-----------------------------------------------------------------");
+
+					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO moto\n- CB 500 E XRE");
+
+					Produto moto = new Moto("CB-500", "kjh4561", "azul", 1,1,(float) 80.0);
+					Produto moto2 = new Moto("XRE", "mxs4597", "preto", 1,1,(float) 80.0);
+					produtoService.inserir(moto, pgEstrategyMoto);
+					produtoService.inserir(moto2, pgEstrategyMoto);
+					System.out.println("-----------------------------------------------------------------");
+				}
+				public void cadastraUmaBicicleta() throws ServicoException {
+					System.out.println("-----------------------------------------------------------------");
+					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO BICICLETA \n->MONARK E CALOI");
+					Produto bicicleta = new Bicicleta("MONARK", "vermelha", 1, 1, (float) 50.0);
+					Produto bicicleta2 = new Bicicleta("CALOI", "branca", 1, 1, (float) 75.0);
+					produtoService.inserir(bicicleta, pgEstrategyBicicleta);
+					produtoService.inserir(bicicleta2, pgEstrategyBicicleta);
+					System.out.println("-----------------------------------------------------------------");
 				}
 				public void buscarProduto( int id) {
-					System.out.println("aqui: " + produtoService.buscar(id));
+					System.out.println("-------------------------------------------------------------------");
+					System.out.println("PRODUTO COM ID " + id +": " + produtoService.buscar(id).getModelo());
+					System.out.println("-------------------------------------------------------------------");
 				}
 				
 				
+				public void buscarTodos() {
+					System.out.println("-------------------------------------------------------------------");
+					System.out.println("Listando TODOS OS PRODUTOS: ");
+					for (Produto p : produtoService.buscarTodos()) {
+						if (p instanceof Carro ){
+							System.out.println("classe: " + p.getModelo());
+						}
+					}
+					System.out.println("-------------------------------------------------------------------");
+				}
+				public void buscarProdTodos() {
+					System.out.println("-------------------------------------------------------------------");
+					System.out.println("BUSCANDO OS PRODUTOS DISPONÃ�VEIS");
+					for (Produto p : produtoService.buscarTodos()) {
+						if (p.getStatus() == 1 && p instanceof Moto)
+						System.out.println("MODELO/TIPO: " + p.getModelo());
+					}
+					System.out.println("-------------------------------------------------------------------");
+				}
 				
-				
-			
 			public void cadastrarClientes() throws ServicoException {
-				//alugarProdService.alugarProduto(idcarro, idcliente, qtdDias);
+				//tipo -> 1 locador e 2 locatário
+				System.out.println("-------------------------------------------------------------------");
+				System.out.println("Cadastrando cliente Marlus com categoria A");
+				System.out.println("-------------------------------------------------------------------");
 				cliente.setCpf("01825293466");
 				cliente.setEmail("marlus@gmail.com");
 				cliente.setNome("Marlus Marcos");
-				cliente.setTipo(1);
-				cliente.setCnh('a');
+				cliente.setTipo(2);
+				cliente.setCnh('A');
 				Cliente cliente2 = new Cliente ();
+				System.out.println("Cadastrando cliente Marlus Marcos Rodrigues com categoria B");
 				cliente2.setCpf("01888093466");
-				cliente2.setEmail("marsadadadalus@gmail.com");
-				cliente2.setNome("nohjhjkhme");
-				//moto.setModelo("FAN");
-				//moto.setId(1);
-				//motoService.inserirMoto(moto);
-			//	System.out.println(motoService.buscarMoto(1).getModelo());
+				cliente2.setEmail("marlus@gmail.com");
+				cliente2.setNome("Marlus Marcos Rodrigues");
+				cliente2.setCnh('B');
+				cliente2.setTipo(2);
+				System.out.println("-------------------------------------------------------------------");
 				Cliente cliente3 = new Cliente ();
 				cliente3.setCpf("01634993466");
 				cliente3.setEmail("marlus@xxffgmail.com");
 				cliente3.setNome("nomsfse");
-//				//cliente.setTipo(1);
+				cliente.setTipo(2);
 				clienteDAO.insert(cliente);
 				clienteDAO.insert(cliente2);
 				clienteDAO.insert(cliente3);
@@ -79,20 +145,41 @@ public class ViewCasos {
 				System.out.println("id: " + c.getId());
 			
 			}
-			
-			public void cadastrarCarro () throws ServicoException {
-				Carro carro = new Carro("uno", "kjh4561", "branco", 1,1,(float) 80.0);
-				//carroService.inserir(carro);
-				Carro carro2 = new Carro("GOL", "mxs4597", "preto", 1,1,(float) 80.0);
-				//carroService.inserir(carro2);
-				//Carro out = carroService.buscarCarro(1);
-				//System.out.println("id:" + out.getId() +"\nModelo: " + out.getModelo());
-				//out.setModelo("CERATO");
-				//carroService.alterar(1, out);
-				Carro out2 = new Carro();
-				//out2 = carroService.buscarCarro(1);
-				System.out.println("id:" + out2.getId() +"\nModelo: " + out2.getModelo());
+			public void alugarUmProduto() {
+				/*produto, cliente e qtd de dias*/
+				System.out.println("=******* ALUGANDO UM CARRO COM CATEROGIA DIFERENTE *******=");
+				alugarService.alugarProduto(1, 1, 2, alugarCarro, clienteDAO);
+				System.out.println("=******* ALUGANDO UM CARRO COM CATEROGIA CORRETA *******=");
+				alugarService.alugarProduto(1, 2, 2, alugarCarro, clienteDAO);
+				System.out.println("=******* ALUGANDO UM CARRO QUE JA FOI ALUGADO *******=");
+				alugarService.alugarProduto(1, 3, 2, alugarCarro, clienteDAO);
 			}
+			public void alugarUmProdutoMoto() {
+				System.out.println("=******* ALUGANDO UMA MOTO COM CATEROGIA DIFERENTE *******=");
+				alugarService.alugarProduto(1, 1, 2, alugarMoto, clienteDAO);
+				System.out.println("=******* ALUGANDO UMA MOTO COM CATEROGIA CORRETA *******=");
+				alugarService.alugarProduto(1, 2, 2, alugarMoto, clienteDAO);
+				System.out.println("=******* ALUGANDO UMA MOTO QUE JÁ FOI ALUGADA *******=");
+				alugarService.alugarProduto(1, 3, 2, alugarMoto, clienteDAO);
+			}
+			
+			public void carrosAlugados() {
+				System.out.println("MOSTRANDO CARROS ALUGADOS: ");
+				Alugar alugar = alugarService.buscar(1);
+				//if (alugar.getCliente().getNome() )
+				System.out.println("Cliente: " + alugar.getCliente().getNome() + "\nCarro: " + alugar.getProduto().getModelo());
+			}
+			public void MotosAlugados() {
+				System.out.println("MOSTRANDO motos ALUGADAS: ");
+				Alugar alugar = alugarService.buscar(1);
+				//if (alugar.getCliente().getNome() )
+				System.out.println("Cliente: " + alugar.getCliente().getNome() + "\nCarro: " + alugar.getProduto().getModelo());
+			}
+			public void devolucao () {
+				alugarService.devolucao(1, 2, alugarCarro, clienteDAO, "carrro Ã³timo");
+			}
+			
+		
 			public void carrosDisponiveis () {
 				System.out.println("Carros disponiveis");
 				
@@ -106,38 +193,3 @@ public class ViewCasos {
 				 */
 				}
 }
-/*
-			}
-			public void alugarCarro(int idcarro, int idcliente, int dias) throws ServicoException {
-				alugar.alugarCarro(idcarro, idcliente, dias);
-				
-			}
-			public void carrosAlugados () {
-				int i = 0;
-				//Carro carro = new Carro();
-				for (Alugar car : alugar.todosAlugados()) {
-					System.out.println("Carro: " + car.getCarro().getModelo());
-				}
-			}
-			public void carrosClienteAlugados () {
-				//Carro c = new Carro();
-				//Cliente cl = new Cliente ();
-				System.out.println("-----------------------------");
-				System.out.println("Carros alugados do cliente:");
-				for (Alugar car : alugar.todosAlugados()) {
-					System.out.println("Carro: " + car.getCarro().getModelo() + " | Cliente: "+ car.getCliente().getNome());
-					System.out.println("-----------------------------");
-				}
-			}
-			public void informar () {
-				System.out.println("Informação dos clientes");
-				for (Alugar car : alugar.todosAlugados()) {
-					System.out.println("Carro: " + car.getCarro().getModelo() + " | Cliente: "+ car.getCliente().getNome()+ " | preco: "+ car.getPreco());
-					System.out.println("-----------------------------");
-				}
-				
-			}
-			
-			
-}
-			*/

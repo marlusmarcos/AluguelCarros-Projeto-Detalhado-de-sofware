@@ -11,7 +11,7 @@ public class ProdutoDAO implements IProdutoDAO {
 		super();
 		produtos = new ArrayList<Produto>();
 	}
-	protected int setarId =0;// criar automaticamente id para controle
+	protected int setarId;
 
 	@Override
 	public void inserir(Produto produto) {
@@ -33,14 +33,13 @@ public class ProdutoDAO implements IProdutoDAO {
 
 	@Override
 	public Produto buscar(int id) {
-		// TODO Auto-generated method stub
-		return produtos.get(id);
+		
+		return produtos.get(id-1);
 	}
 
 	@Override
 	public ArrayList<Produto> buscarProdutos() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.produtos;
 	}
 
 	
@@ -50,7 +49,7 @@ public class ProdutoDAO implements IProdutoDAO {
 	}
 	public int sequenciarId() {
 		// id atual será igual ao próximo id em sequencia
-		int id = setID();
+		int id = this.setID();
 		return id;
 	}
 
