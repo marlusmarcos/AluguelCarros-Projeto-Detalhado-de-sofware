@@ -22,6 +22,7 @@ import aluguelCarrosService.ProdutoGerenciaStrategy;
 import aluguelCarrosService.ProdutoService;
 import aluguelCarrosService.ServiceAlugarCarro;
 import aluguelCarrosService.ServiceAlugarMoto;
+import aluguelCarrosService.ServiceAlugarBicicleta;
 
 public class ViewCasos {
 
@@ -45,7 +46,8 @@ public class ViewCasos {
 				//classe resposável por alugar um carro/ variável.
 				ProdutoAlugarStrategy alugarCarro = new ServiceAlugarCarro();
 				ProdutoAlugarStrategy alugarMoto = new ServiceAlugarMoto();
-
+				ProdutoAlugarStrategy alugarBicicleta = new ServiceAlugarBicicleta();
+				
 				public void cadastraUmCarro() throws ServicoException {
 					System.out.println("-----------------------------------------------------------------");
 					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO CARRO \n->UNO E GOL");
@@ -159,18 +161,30 @@ public class ViewCasos {
 				System.out.println("=******* ALUGANDO UMA MOTO QUE JÁ FOI ALUGADA *******=");
 				alugarService.alugarProduto(1, 3, 2, alugarMoto, clienteDAO);
 			}
+			public void alugarUmProdutoBicicleta() {
+				System.out.println("=******* ALUGANDO UMA BICICLETA *******=");
+				alugarService.alugarProduto(1, 2, 2, alugarBicicleta, clienteDAO);
+				System.out.println("=******* ALUGANDO UMA BICICLETA QUE ESTÁ ALUGADA *******=");
+				alugarService.alugarProduto(1, 3, 2, alugarBicicleta, clienteDAO);
+			}
 			
 			public void carrosAlugados() {
 				System.out.println("MOSTRANDO CARROS ALUGADOS: ");
 				Alugar alugar = alugarService.buscar(1);
 				//if (alugar.getCliente().getNome() )
-				System.out.println("Cliente: " + alugar.getCliente().getNome() + "\nCarro: " + alugar.getProduto().getModelo());
+				System.out.println("Cliente: " + alugar.getCliente().getNome() + "\n Carro: " + alugar.getProduto().getModelo());
 			}
 			public void MotosAlugados() {
 				System.out.println("MOSTRANDO motos ALUGADAS: ");
 				Alugar alugar = alugarService.buscar(1);
 				//if (alugar.getCliente().getNome() )
-				System.out.println("Cliente: " + alugar.getCliente().getNome() + "\nCarro: " + alugar.getProduto().getModelo());
+				System.out.println("Cliente: " + alugar.getCliente().getNome() + "\n Moto: " + alugar.getProduto().getModelo());
+			}
+			public void BicicletasAlugadas() {
+				System.out.println("MOSTRANDO AS BICICLETAS ALUGADAS: ");
+				Alugar alugar = alugarService.buscar(1);
+				//if (alugar.getCliente().getNome() )
+				System.out.println("Cliente: " + alugar.getCliente().getNome() + "\n Bicicleta: " + alugar.getProduto().getModelo());
 			}
 			public void devolucao () {
 				alugarService.devolucao(1, 2, alugarCarro, clienteDAO, "carrro Ã³timo");

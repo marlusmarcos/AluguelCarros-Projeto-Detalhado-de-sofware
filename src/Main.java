@@ -23,9 +23,10 @@ public class Main {
 		vw.buscarProduto(1);
 		vw.buscarTodos();
 		vw.alugarUmProduto();
+		vw.alugarUmProdutoBicicleta();
 		vw.buscarProdTodos();
 		vw.carrosAlugados();
-		System.out.println("\n-----fazendo devoluÃ§Ã£o do carro:-------");
+		System.out.println("\n-----fazendo devolução do carro:-------");
 		vw.devolucao();
 		vw.buscarProdTodos();
 		//vw.devolucao();
