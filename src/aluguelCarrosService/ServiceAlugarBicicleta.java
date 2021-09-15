@@ -27,17 +27,18 @@ public class ServiceAlugarBicicleta   implements ProdutoAlugarStrategy{
 			e.printStackTrace();
 		}
 		
-	
-		
 	}
 	@Override
 	public boolean validar (Cliente cliente, Produto bicicleta) throws ServicoException {
 		String erros = "";
 		
 		if (bicicleta.getStatus() != 1) {
-
-			erros += "A bicicleta n„o est· disponÌvel para ser alugada! \n";
+				erros += "A bicicleta n√£o est√° dispon√≠vel para ser alugada! \n";
 		}
+	
+    if (cliente.getIdade() < 18) {
+      erros+= "O cliente deve ter pelo menos 18 anos";
+    }
 		
 		if (cliente.getIdade() < 18) {
 			erros+= "O cliente deve ter pelo menos 18 anos! \n";
@@ -49,8 +50,8 @@ public class ServiceAlugarBicicleta   implements ProdutoAlugarStrategy{
 		}
 		return true;
 		
-		
 	}
+  
 	@Override
 	public void devolucao(int idProduto, int idCliente, ProdutoService produtoService,
 			ClienteService clienteService, IAlugarDAO alugarContextDAO, String avaliacao) {

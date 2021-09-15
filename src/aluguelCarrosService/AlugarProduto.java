@@ -1,6 +1,8 @@
 
 package aluguelCarrosService;
 
+import java.util.ArrayList;
+
 import aluguelCarrosDAO.AlugarContextDAO;
 import aluguelCarrosDAO.IAlugarDAO;
 import aluguelCarrosModels.Alugar;
@@ -14,9 +16,13 @@ public class AlugarProduto {
 		super();
 		this.produtoService = produtoService;
 	}
+	//função para verificar se é locador ou locatário
+	
 
 	public void alugarProduto(int idproduto, int idcliente, int qtdDias, ProdutoAlugarStrategy prodServStrategy, ClienteService clienteService) {		
-		prodServStrategy.alugar(idproduto, idcliente, qtdDias, produtoService, clienteService, alugarContextDAO);
+		
+			prodServStrategy.alugar(idproduto, idcliente, qtdDias, produtoService, clienteService, alugarContextDAO);
+		
 	}
 	public Alugar buscar (int id) {
 		return alugarContextDAO.buscar(id);
@@ -25,6 +31,10 @@ public class AlugarProduto {
 		prodServStrategy.devolucao(idProduto, idCliente, produtoService, clienteService, alugarContextDAO, avaliacao);
 		
 	}
+	public ArrayList<Alugar> todosAlugados () {
+		return alugarContextDAO.buscarProdutos();
+	}
+	
 	
 		
 

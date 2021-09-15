@@ -15,7 +15,9 @@ public class Main {
 		ViewCasos vw = new ViewCasos();
 		vw.buscarProdTodos();
 		vw.cadastrarClientes();
-		//vw.alterarCliente();
+		vw.listandoTodosClientes();
+	
+		
 		vw.cadastraUmCarro();
 		vw.cadastraUmaMoto();
 		vw.cadastraUmaBicicleta();
@@ -24,14 +26,15 @@ public class Main {
 		vw.buscarTodos();
 		vw.alugarUmProduto();
 		vw.alugarUmProdutoBicicleta();
+		vw.alugarUmProdutoMoto();
 		vw.buscarProdTodos();
 		vw.carrosAlugados();
-		System.out.println("\n-----fazendo devolução do carro:-------");
+		System.out.println("\n-----fazendo devoluï¿½ï¿½o do carro:-------");
 		vw.devolucao();
 		vw.buscarProdTodos();
 		//vw.devolucao();
 		
-		
+		vw.prodAlugadoPorCliente();
 	}
 	
 }

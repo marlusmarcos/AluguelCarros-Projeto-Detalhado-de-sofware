@@ -1,5 +1,7 @@
 package aluguelCarrosModels;
 
+import java.util.HashMap;
+
 public class Bicicleta extends Produto{
 	
 	protected HashMap<Integer, String> comentarios = new HashMap<Integer, String>();

@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import ServoceExceptioin.ServicoException;
 import aluguelCarrosDAO.BicicletaDAO;
 import aluguelCarrosDAO.IBicicletaDAO;
+import aluguelCarrosDAO.IProdutoDAO;
 import aluguelCarrosDAO.ProdutoDAO;
 import aluguelCarrosModels.Bicicleta;
+import aluguelCarrosModels.Produto;
 
 
 public class BicicletaService implements ProdutoGerenciaStrategy{
@@ -40,20 +42,23 @@ public class BicicletaService implements ProdutoGerenciaStrategy{
 				erros+="O dono deve ser 1 ou 2! \n";
 			}
 			if (b.getModelo() == "" || b.getModelo() == null) {
-				erros += "O modelo está vazio!\n";
+				erros += "O modelo estï¿½ vazio!\n";
 			}
 			if (b.getCor() == "" || b.getCor() == null) {
-
-				erros += "A cor está vazia!\n";
+				erros += "A cor estï¿½ vazia!\n";
 			}
 			if (b.getPreco() < 0) {
-				erros += "O preço inserido é inválido!\n";
+				erros += "O preï¿½o inserido ï¿½ invï¿½lido!\n";
 
-				erros += "A cor está vazia! \n";
+				erros += "A cor estï¿½ vazia! \n";
 			}
 			if (b.getPreco() < 0) {
-				erros += "O preço inserido está inválido! \n";
+				erros += "O preï¿½o inserido estï¿½ invï¿½lido! \n";
 
+				erros += "A cor estï¿½ vazia!\n";
+			}
+			if (b.getPreco() < 0) {
+				erros += "O preï¿½o inserido ï¿½ invï¿½lido!\n";
 			}
 		}
 		if (erros.length() > 0) {
@@ -61,22 +66,7 @@ public class BicicletaService implements ProdutoGerenciaStrategy{
 		}
 		return 1;
 	}
-	
-	/*public int verificarBicicleta (Bicicleta c) throws ServicoException {
-		String erros = "";
-		if (c == null) {
-			erros += "Cliente nulo\n";
-		}
-		if (c.getDono() != 1 && c.getDono() != 2) {
-			erros+="o dono deve ser 1 ou 2\n";
-		}
-		if (c.getModelo() == "") {
-			erros += "o modelo estÃ¡ vazio\n";
-		}
-		if (erros.length() > 0) {
-			throw new ServicoException(erros);
-		}
-		return 1;
-	}/*
 
 }
+
+

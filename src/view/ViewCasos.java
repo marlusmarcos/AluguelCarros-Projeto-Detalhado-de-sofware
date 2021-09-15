@@ -27,8 +27,6 @@ import aluguelCarrosService.ServiceAlugarBicicleta;
 public class ViewCasos {
 
 				ClienteService clienteDAO = new ClienteService();
-				Cliente cliente = new Cliente ();
-				
 
 				//classe de serviço para gerenciamento de veículos
 				ProdutoService produtoService = new ProdutoService();
@@ -73,6 +71,7 @@ public class ViewCasos {
 					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO BICICLETA \n-> MONARK E CALOI");
 					Produto bicicleta = new Bicicleta("MONARK", "vermelha", 1, 1, (float) 50.0);
 					Produto bicicleta2 = new Bicicleta("CALOI", "branca", 1, 1, (float) 75.0);
+
 					produtoService.inserir(bicicleta, pgEstrategyBicicleta);
 					produtoService.inserir(bicicleta2, pgEstrategyBicicleta);
 					System.out.println("-----------------------------------------------------------------");
@@ -88,15 +87,15 @@ public class ViewCasos {
 					System.out.println("-------------------------------------------------------------------");
 					System.out.println("Listando TODOS OS PRODUTOS: ");
 					for (Produto p : produtoService.buscarTodos()) {
-						if (p instanceof Carro ){
+					//	if (p instanceof Carro ){
 							System.out.println("classe: " + p.getModelo());
-						}
+						//}
 					}
 					System.out.println("-------------------------------------------------------------------");
 				}
 				public void buscarProdTodos() {
 					System.out.println("-------------------------------------------------------------------");
-					System.out.println("BUSCANDO OS PRODUTOS DISPONÃ�VEIS");
+					System.out.println("BUSCANDO AS MOTOS DISPONIVEIS");
 					for (Produto p : produtoService.buscarTodos()) {
 						if (p.getStatus() == 1 && p instanceof Moto)
 						System.out.println("MODELO/TIPO: " + p.getModelo());
@@ -105,31 +104,45 @@ public class ViewCasos {
 				}
 				
 			public void cadastrarClientes() throws ServicoException {
+				//tipo -> 1 locador e 2 locatário
 				System.out.println("-------------------------------------------------------------------");
-				System.out.println("Cadastrando cliente Marlus com categoria A");
+				System.out.println("Cadastrando cliente Marlus Marcos com categoria A");
 				System.out.println("-------------------------------------------------------------------");
+				Cliente cliente = new Cliente ();
 				cliente.setCpf("01825293466");
 				cliente.setEmail("marlus@gmail.com");
 				cliente.setNome("Marlus Marcos");
-				cliente.setTipo(1);
+				cliente.setTipo(2);
 				cliente.setCnh('A');
 				Cliente cliente2 = new Cliente ();
-				System.out.println("Cadastrando cliente Marlus Marcos Rodrigues com categoria B");
+				System.out.println("Cadastrando cliente Rodrigues com categoria B");
 				cliente2.setCpf("01888093466");
 				cliente2.setEmail("marlus@gmail.com");
-				cliente2.setNome("Marlus Marcos Rodrigues");
+				cliente2.setNome("Rodrigues");
 				cliente2.setCnh('B');
+				cliente2.setTipo(2);
 				System.out.println("-------------------------------------------------------------------");
 				Cliente cliente3 = new Cliente ();
 				cliente3.setCpf("01634993466");
 				cliente3.setEmail("marlus@xxffgmail.com");
-				cliente3.setNome("nomsfse");
-//				//cliente.setTipo(1);
+				cliente3.setNome("nome teste");
+				cliente3.setTipo(2);
+				cliente3.setCnh('D');
 				clienteDAO.insert(cliente);
 				clienteDAO.insert(cliente2);
 				clienteDAO.insert(cliente3);
+				
+				Cliente cliente4 = new Cliente ();
+				cliente4.setCpf("01825093455");
+				cliente4.setNome("Neymar");
+				cliente4.setIdade(17);
+				clienteDAO.insert(cliente4);
 			}
-			
+			public void listandoTodosClientes() {
+				for (Cliente c: clienteDAO.buscarClientes()) {
+					System.out.println("Cliente: " + c.getNome() + "\nCNH: " + c.getCnh());
+				}
+			}
 			public void alterarCliente() {
 				Cliente c  = new Cliente();
 				c = clienteDAO.buscarID(1);
@@ -146,26 +159,27 @@ public class ViewCasos {
 			
 			}
 			public void alugarUmProduto() {
+				/*produto, cliente e qtd de dias*/
 				System.out.println("=******* ALUGANDO UM CARRO COM CATEROGIA DIFERENTE *******=");
 				alugarService.alugarProduto(1, 1, 2, alugarCarro, clienteDAO);
 				System.out.println("=******* ALUGANDO UM CARRO COM CATEROGIA CORRETA *******=");
 				alugarService.alugarProduto(1, 2, 2, alugarCarro, clienteDAO);
-				System.out.println("=******* ALUGANDO UM CARRO QUE JÃ� FOI ALUGADO *******=");
+				System.out.println("=******* ALUGANDO UM CARRO QUE JA FOI ALUGADO *******=");
 				alugarService.alugarProduto(1, 3, 2, alugarCarro, clienteDAO);
 			}
 			public void alugarUmProdutoMoto() {
 				System.out.println("=******* ALUGANDO UMA MOTO COM CATEROGIA DIFERENTE *******=");
-				alugarService.alugarProduto(1, 1, 2, alugarMoto, clienteDAO);
+				alugarService.alugarProduto(3, 2, 2, alugarMoto, clienteDAO);
 				System.out.println("=******* ALUGANDO UMA MOTO COM CATEROGIA CORRETA *******=");
-				alugarService.alugarProduto(1, 2, 2, alugarMoto, clienteDAO);
+				alugarService.alugarProduto(3, 1, 2, alugarMoto, clienteDAO);
 				System.out.println("=******* ALUGANDO UMA MOTO QUE JÁ FOI ALUGADA *******=");
-				alugarService.alugarProduto(1, 3, 2, alugarMoto, clienteDAO);
+				alugarService.alugarProduto(3, 2, 2, alugarMoto, clienteDAO);
 			}
 			public void alugarUmProdutoBicicleta() {
 				System.out.println("=******* ALUGANDO UMA BICICLETA *******=");
-				alugarService.alugarProduto(1, 2, 2, alugarBicicleta, clienteDAO);
+				alugarService.alugarProduto(5, 4, 2, alugarBicicleta, clienteDAO);
 				System.out.println("=******* ALUGANDO UMA BICICLETA QUE ESTÁ ALUGADA *******=");
-				alugarService.alugarProduto(1, 3, 2, alugarBicicleta, clienteDAO);
+				alugarService.alugarProduto(5, 3, 2, alugarBicicleta, clienteDAO);
 			}
 			
 			public void carrosAlugados() {
@@ -187,23 +201,20 @@ public class ViewCasos {
 				System.out.println("Cliente: " + alugar.getCliente().getNome() + "\n Bicicleta: " + alugar.getProduto().getModelo());
 			}
 			public void devolucao () {
-				alugarService.devolucao(1, 2, alugarCarro, clienteDAO, "carrro Ã³timo");
+				alugarService.devolucao(1, 2, alugarCarro, clienteDAO, "carro ótimo");
 			}
-
 			
-		
-			public void carrosDisponiveis () {
+		/*	public void carrosDisponiveis () {
 				System.out.println("Carros disponiveis");
 				
-				/*for (Carro c : carroService.buscarCarros()) {
+				for (Carro c : carroService.buscarCarros()) {
 					if (c.getStatus() == 1) {
 					System.out.println("modelo: " + c.getModelo());
 					System.out.println("placa: " + c.getPlaca());
 					System.out.println("status: " + c.getDono());
 				
-					}
-				 */
-
+					}	 
+      }*/
 			public void prodAlugadoPorCliente () {
 				System.out.println("TODOS OS PRODUTOS ALUGADOS POR CLIENTES: \n");
 				for (Alugar a: alugarService.todosAlugados()) {
@@ -211,39 +222,6 @@ public class ViewCasos {
 							+ "\n>>>>>> Produto: "+a.getProduto().getModelo()+"\n-------------------------------------------------------------------");
 
 				}
-			}
-/*
-			}
-			public void alugarCarro(int idcarro, int idcliente, int dias) throws ServicoException {
-				alugar.alugarCarro(idcarro, idcliente, dias);
-				
-			}
-			public void carrosAlugados () {
-				int i = 0;
-				//Carro carro = new Carro();
-				for (Alugar car : alugar.todosAlugados()) {
-					System.out.println("Carro: " + car.getCarro().getModelo());
-				}
-			}
-			public void carrosClienteAlugados () {
-				//Carro c = new Carro();
-				//Cliente cl = new Cliente ();
-				System.out.println("-----------------------------");
-				System.out.println("Carros alugados do cliente:");
-				for (Alugar car : alugar.todosAlugados()) {
-					System.out.println("Carro: " + car.getCarro().getModelo() + " | Cliente: "+ car.getCliente().getNome());
-					System.out.println("-----------------------------");
-				}
-			}
-			public void informar () {
-				System.out.println("InformaÃ§Ã£o dos clientes");
-				for (Alugar car : alugar.todosAlugados()) {
-					System.out.println("Carro: " + car.getCarro().getModelo() + " | Cliente: "+ car.getCliente().getNome()+ " | preco: "+ car.getPreco());
-					System.out.println("-----------------------------");
-				}
-				
-			}
-			
+			}				
 			
 }
-			*/
