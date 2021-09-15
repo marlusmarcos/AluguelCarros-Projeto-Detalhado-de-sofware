@@ -50,7 +50,7 @@ public class ViewCasos {
 				
 				public void cadastraUmCarro() throws ServicoException {
 					System.out.println("-----------------------------------------------------------------");
-					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO CARRO \n->UNO E GOL");
+					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO CARRO \n-> UNO E GOL");
 					Produto carro = new Carro("uno", "kjh4561", "branco", 1,1,(float) 80.0);
 					Produto carro2 = new Carro("GOL", "mxs4597", "preto", 1,1,(float) 80.0);
 					produtoService.inserir(carro, pgEstrategy);
@@ -60,7 +60,7 @@ public class ViewCasos {
 				public void cadastraUmaMoto() throws ServicoException {
 					System.out.println("-----------------------------------------------------------------");
 
-					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO moto\n- CB 500 E XRE");
+					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO moto\n-> CB 500 E XRE");
 
 					Produto moto = new Moto("CB-500", "kjh4561", "azul", 1,1,(float) 80.0);
 					Produto moto2 = new Moto("XRE", "mxs4597", "preto", 1,1,(float) 80.0);
@@ -70,7 +70,7 @@ public class ViewCasos {
 				}
 				public void cadastraUmaBicicleta() throws ServicoException {
 					System.out.println("-----------------------------------------------------------------");
-					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO BICICLETA \n->MONARK E CALOI");
+					System.out.println("CRIANDO E ADICIONANDO DOIS VEÍCULOS DO TIPO BICICLETA \n-> MONARK E CALOI");
 					Produto bicicleta = new Bicicleta("MONARK", "vermelha", 1, 1, (float) 50.0);
 					Produto bicicleta2 = new Bicicleta("CALOI", "branca", 1, 1, (float) 75.0);
 					produtoService.inserir(bicicleta, pgEstrategyBicicleta);
@@ -189,6 +189,7 @@ public class ViewCasos {
 			public void devolucao () {
 				alugarService.devolucao(1, 2, alugarCarro, clienteDAO, "carrro Ã³timo");
 			}
+
 			
 		
 			public void carrosDisponiveis () {
@@ -202,8 +203,15 @@ public class ViewCasos {
 				
 					}
 				 */
+
+			public void prodAlugadoPorCliente () {
+				System.out.println("TODOS OS PRODUTOS ALUGADOS POR CLIENTES: \n");
+				for (Alugar a: alugarService.todosAlugados()) {
+					System.out.println("Cliente: "+a.getCliente().getNome() + "\n CPF:  " + a.getCliente().getCpf()+""
+							+ "\n>>>>>> Produto: "+a.getProduto().getModelo()+"\n-------------------------------------------------------------------");
+
 				}
-}
+			}
 /*
 			}
 			public void alugarCarro(int idcarro, int idcliente, int dias) throws ServicoException {

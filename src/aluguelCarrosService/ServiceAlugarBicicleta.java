@@ -35,8 +35,15 @@ public class ServiceAlugarBicicleta   implements ProdutoAlugarStrategy{
 		String erros = "";
 		
 		if (bicicleta.getStatus() != 1) {
-				erros += "A bicicleta não está disponível para ser alugada! \n";
+
+			erros += "A bicicleta não está disponível para ser alugada! \n";
 		}
+		
+		if (cliente.getIdade() < 18) {
+			erros+= "O cliente deve ter pelo menos 18 anos! \n";
+
+		}
+		
 		if (erros.length() > 0) {
 			throw new ServicoException(erros);
 		}
