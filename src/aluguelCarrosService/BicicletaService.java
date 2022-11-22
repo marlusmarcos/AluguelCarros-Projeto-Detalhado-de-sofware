@@ -36,15 +36,25 @@ public class BicicletaService implements ProdutoGerenciaStrategy{
 	public int verificarBicicleta (Bicicleta b) throws ServicoException  {
 		String erros = "";
 		if (b == null) {
-			erros += "Bicicleta nula!\n";
+			erros += "Bicicleta nula! \n";
 		}else {
 			if (b.getDono() != 1 && b.getDono() != 2) {
-				erros+="O dono deve ser 1 ou 2!\n";
+				erros+="O dono deve ser 1 ou 2! \n";
 			}
 			if (b.getModelo() == "" || b.getModelo() == null) {
 				erros += "O modelo est� vazio!\n";
 			}
 			if (b.getCor() == "" || b.getCor() == null) {
+				erros += "A cor est� vazia!\n";
+			}
+			if (b.getPreco() < 0) {
+				erros += "O pre�o inserido � inv�lido!\n";
+
+				erros += "A cor est� vazia! \n";
+			}
+			if (b.getPreco() < 0) {
+				erros += "O pre�o inserido est� inv�lido! \n";
+
 				erros += "A cor est� vazia!\n";
 			}
 			if (b.getPreco() < 0) {
@@ -56,8 +66,6 @@ public class BicicletaService implements ProdutoGerenciaStrategy{
 		}
 		return 1;
 	}
-
-
 
 }
 

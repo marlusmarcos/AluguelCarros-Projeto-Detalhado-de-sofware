@@ -25,5 +25,4 @@ public class ProdutoService {
 		return produtoDAO.buscarProdutos();
 	}
 
-	
 }
